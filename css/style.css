@@ -12,6 +12,10 @@ body{
 nav{
     font-size: 20px;
 }
+.main-container{
+    text-align: center;
+    margin: 30px;
+}
 
 .header-container{
     display: flex;
