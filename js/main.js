@@ -1,8 +1,8 @@
 'use strict'
 
 import theRouter from './routes.js';
-import appHeader from '../pages/app-header.cmp.js';
-import appFooter from '../pages/app-footer.cmp.js';
+import appHeader from './pages/app-header.cmp.js';
+import appFooter from './pages/app-footer.cmp.js';
 
 new Vue({
     router: theRouter, 

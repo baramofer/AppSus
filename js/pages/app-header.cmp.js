@@ -5,7 +5,7 @@ export default {
     <section class="header-container">
         <div class="logo">
             <i class="fas fa-hat-cowboy-side"></i>
-            <span style="color:grey">AppSus</span>
+            <span style="color:grey; font-size:35px">AppSus</span>
         </div>
         <nav class="nav-container">
                    <router-link to="/">Home</router-link>|

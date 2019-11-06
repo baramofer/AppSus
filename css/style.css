@@ -8,6 +8,7 @@ body{
     background-color: rgb(252, 252, 252);
     padding: 0;
     margin: 0;
+    font-family: Poppins;
 }
 nav{
     font-size: 20px;
@@ -33,7 +34,7 @@ nav{
 }
 .header-container .logo{
     padding: 10px;
-    font-size: 50px;
+    font-size: 40px;
     color: rgba(255, 127, 80, 0.815);
 }
 
@@ -46,6 +47,76 @@ nav{
     text-decoration: none;
     color: rgba(255, 127, 80, 0.815);
 }
+
+.notes-list-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+.note-preview-container .toolBar{
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.note-preview-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 28%;
+    margin: 8px;
+    border: rgba(0, 0, 0, 0.041) 1px solid;
+    padding: 10px;
+    font-size: 13px;
+    color: rgb(43, 43, 43);
+    height: 100px;
+    position: relative;
+}
+.note-preview-container .toolsToggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: blue;
+    z-index: 1;
+    background-color: rgba(252, 252, 252, 0.904);
+    height: 50%;
+    width: 80%;
+    border-radius: 10px;
+}
+.toolsToggle{
+    display: flex;
+}
+.toolsToggle img{
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.note-preview-container{
+    -webkit-box-shadow: 7px 4px 18px -8px rgba(0,0,0,0.25);
+    -moz-box-shadow: 7px 4px 18px -8px rgba(0,0,0,0.25);
+    box-shadow: 7px 4px 18px -8px rgba(0,0,0,0.25);
+}
+.note-preview-container.red{
+    background-color: rgba(255, 6, 6, 0.1);
+}
+.note-preview-container.blue{
+    background-color: rgba(6, 176, 255, 0.1);
+}
+.note-preview-container.green{
+    background-color: rgba(6, 255, 48, 0.1);
+}
+.note-preview-container.yellow{
+    background-color: rgba(255, 189, 6, 0.1);
+}
+
 
 @media (max-width: 600px) {
     .nav-container{

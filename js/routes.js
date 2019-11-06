@@ -1,6 +1,6 @@
 'use strict'
 
-import homePage from '../pages/home.cmp.js';
+import homePage from './pages/home.cmp.js';
 import emailApp from '../js/apps/email/email-app.cmp.js';
 import missKeep from '../js/apps/keep/keep-app.cmp.js';
 

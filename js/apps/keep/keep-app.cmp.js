@@ -7,9 +7,9 @@ import keepService from './service/keep.service.js'
 
 export default {
     template:`
-      <section v-if="notesToShow" class="notes-container">
+      <section v-if="notesToShow" class="notes-container" >
           <!-- <book-filter @filtered="setFilter"></book-filter> -->
-          <keep-list :notes="notesToShow"></keep-list>
+          <keep-list @noteChange="noteChange" :notes="notesToShow"></keep-list>
       </section>
     `
 ,
@@ -23,7 +23,16 @@ export default {
     methods:{
       setFilter(filter) {
         this.filterBy = filter         
-    }
+    },
+    noteChange(noteId, action, color){
+      // switch case need
+      if(action ==='delete') keepService.deleteNote(noteId)
+      if(action ==='clone') keepService.cloneNote(noteId)
+      if(action ==='edit') keepService.editNote(noteId)
+      if(action ==='tack') keepService.tackNote(noteId)
+      if(action ==='changeColor') keepService.changeColorNote(noteId, color)
+                
+  }
 },
     computed:{
       notesToShow(){

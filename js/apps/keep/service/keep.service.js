@@ -4,10 +4,16 @@ import utilService from './util.service.js'
 
 export default {
     getNotes,
-    createNotes
+    createNotes,
+    deleteNote,
+    changeColorNote,
+    tackNote,
+    editNote,
+    cloneNote
 }
 
-const STORAGE_KEY = 'gNotes'
+const STORAGE_KEY = 'gNotes';
+var gNextId = 100;
 
 var gNotes = createNotes()
 window.gNotes = gNotes;
@@ -16,6 +22,7 @@ function createNotes(){
     gNotes = utilService.loadFromStorage(STORAGE_KEY);
     if (!gNotes){
         gNotes = [
+            createNote('text','this is a demo note', 'red'),
             createNote('text','this is a demo note', 'red'),
             createNote('text','this is a secondssss note', 'red')
         ]
@@ -32,7 +39,8 @@ function createNote(type, content, color){
     return {
         type,
         content,
-        color
+        color,
+        id:gNextId++
     }
 }
 
@@ -41,20 +49,47 @@ function createNote(type, content, color){
 //     return Promise.resolve(currBook)
 // }
 
-// function findBook(bookId) {
-//     return Promise.resolve(gBooks.find((book)=>book.id===bookId))
-// }
+function _findNote(noteId) {
+    return Promise.resolve(gNotes.find((note)=>note.id===noteId))
+}
+
+function deleteNote(noteId){
+    _findNote(noteId)
+        .then(note => {
+            gNotes.splice(note, 1)
+            utilService.saveToStorage(STORAGE_KEY, gNotes)
+        }
+)}
+
+function cloneNote(noteId){
+    _findNote(noteId)
+        .then(note => {
+            gNotes.push(note)
+            utilService.saveToStorage(STORAGE_KEY, gNotes)
+        }
+)}
+
+function editNote(noteId){
+    _findNote(noteId)
+        .then(note => gNotes.splice(note, 1)
+)}
+
+function tackNote(noteId){
+    // _findNote(noteId)
+    //     .then(note => gNotes.splice(note, 1)
+// )
+}
+
+function changeColorNote(noteId, color){
+    _findNote(noteId)
+    .then(note => {
+        note.color = color;
+        utilService.saveToStorage(STORAGE_KEY, gNotes)
+    }
+)}
 
 // function findBookIdx(bookId){
 //     return gBooks.findIndex(book => book.id===bookId)
-// }
-
-// function deleteReview(bookId, reviewIdx){
-//     findBook(bookId)
-//         .then(book => {
-//                 book.reviews.splice(reviewIdx, 1)
-//            }
-//         )
 // }
 
 // function addReview(bookId, review){
