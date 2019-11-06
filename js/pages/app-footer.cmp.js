@@ -3,7 +3,7 @@
 export default{
     template: `
         <section class="footer-container">
-            <h2>cofferight ofer&snir</h2>
+            <h2>Ⓒ All Rights Reserved To Ofer & Snir</h2>
         </section>
     `,
 }

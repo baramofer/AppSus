@@ -11,8 +11,8 @@ new Vue({
         <section>
             <app-header></app-header>
             <div class="main-container">
-                <router-view></router-view>
-                <app-footer></app-footer>
+            <router-view></router-view>
+            <app-footer></app-footer>
             </div>
         </section>
     `,
