@@ -43,7 +43,3 @@ nav{
     color: rgba(255, 127, 80, 0.815);
 }
 
-@media (max-width: 600px) {
-    .nav-container{
-    }
-}
