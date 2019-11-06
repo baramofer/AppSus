@@ -20,14 +20,16 @@ function getMails() {
 
 var emailsDB = [
   {
+    number: 'mail number 1',
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
+    subject: 'Hello Vue! how are you?',
     name: 'J. K. Working',
     isRead: false,
     sentAt: '04:23'
   },
   {
+    number: 'mail number 2',
     body:
       'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How to use vue in everyday cooking!',
@@ -36,6 +38,7 @@ var emailsDB = [
     sentAt: '04:20'
   },
   {
+    number: 'mail number 3',
     body:
       'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How to use vue in everyday cooking!',
@@ -44,6 +47,7 @@ var emailsDB = [
     sentAt: '01:23'
   },
   {
+    number: 'mail number 4',
     body:
       'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How to use vue in everyday cooking!',
@@ -52,6 +56,7 @@ var emailsDB = [
     sentAt: '04:20'
   },
   {
+    number: 'mail number 5',
     body:
       'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How to use vue in everyday cooking!',
@@ -60,6 +65,7 @@ var emailsDB = [
     sentAt: '01:22'
   },
   {
+    number: 'mail number 6',
     body:
       'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How to use vue in everyday cooking!',
