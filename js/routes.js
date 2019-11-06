@@ -1,24 +1,25 @@
 'use strict'
 
-// import bookApp from './cmps/book-app.cmp.js';
 import homePage from '../pages/home.cmp.js';
+import emailApp from '../js/apps/email/email-app.cmp.js';
+import missKeep from '../js/apps/keep/misskeep-app.cmp.js';
 
 const myRoutes = [
     {
         path: '/',
         component: homePage
     },
-    // {
-    //   path:'/mail',
-    //   component: misterEmail
-    // },
+    {
+      path:'/mail',
+      component: emailApp
+    },
+    {
+        path: '/keep',
+        component: missKeep
+    },
     // {
     //     path: '/book',
     //     component: bookApp
-    // },
-    // {
-    //     path: '/keep',
-    //     component: missKeep
     // },
    
     
