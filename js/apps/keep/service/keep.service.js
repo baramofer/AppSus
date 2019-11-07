@@ -43,7 +43,7 @@ function createNote(type, content, color='red'){
         type,
         content,
         color,
-        id:gNextId++
+        id: utilService.makeId()
     }
 }
 
