@@ -6,7 +6,7 @@ import eventBus, {
 } from '../../../../services/event-bus.js';
 
 export default {
-  name: 'mailSide',
+  props: [],
   template: `
     <section class="mail-side flex">
         <div class="flex column side center  "> 
@@ -19,7 +19,6 @@ export default {
               </ul>
 
               <transition name="slide-fade">
-
               <div class="send-modal" v-if="sendmodal">
                 <div class="flex space-between send-mail-head"> <span>  New Messege </span> <span><i @click=showSendMailModal class="fas fa-times"></i></span> </div>
             <div class="flex">
@@ -31,13 +30,10 @@ export default {
                 </div>
                 <textarea name="" id="" v-model="newemail.body" placeholder="Enter your email here:"></textarea>
               </div>
-              
               </transition>
         </div>
-
     </section>
 `,
-  props: [],
   data() {
     return {
       sendmodal: false,
@@ -53,7 +49,7 @@ export default {
         subject: '',
         name: 'snir&ofer',
         isRead: true,
-        sendAt: new Date().getHours() + ':' + new Date().getMinutes(),
+        sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
         isDeleted: false,
         sendto: '',
         isSent: true
@@ -79,7 +75,7 @@ export default {
         subject: '',
         name: 'snir&ofer',
         isRead: true,
-        sendAt: new Date(),
+        sentAt: new Date(),
         isDeleted: false,
         sendto: '',
         isSent: true

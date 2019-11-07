@@ -5,8 +5,9 @@ import emailDetails from '../cmps/email-details.cmp.js';
 import eventBus, { PICKED_EMAIL_STATE } from '../../../../services/event-bus.js';
 import emailFilter from './email-filter.cmp.js';
 
-export default {template: `
-<section class="mail-list">
+export default {
+props: [],
+template: `<section class="mail-list">
   <ul>
       <email-filter @filterapp="setFilterrr"></email-filter>
     <li class="flex space-between emails-titles"> 
@@ -26,7 +27,6 @@ export default {template: `
 
 </section>
 `,
-props: [],
 data() {
   return {
     emails: null,
@@ -106,9 +106,9 @@ data() {
       this.sort.date = true;
 
       this.emails.sort((email1, email2) => {
-        if (email1.sendAt > email2.sendAt) {
+        if (email1.sentAt > email2.sentAt) {
           return 1;
-        } else if (email1.sendAt < email2.sendAt) {
+        } else if (email1.sentAt < email2.sentAt) {
           return -1;
         } else {
           return 0;

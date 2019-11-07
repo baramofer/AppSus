@@ -4,27 +4,27 @@ import sideNav from '../cmps/email-sidebar.cmp.js'
 import appHeader from '../../../../js/pages/app-header.cmp.js'
 
 export default {
+    props: [],
   template: `
   <div>
-  <header-cmp></header-cmp>
+  <!-- <header-cmp></header-cmp> -->
       <div class="flex">
-        <side-nav></side-nav>
-  
+      <side-nav></side-nav>
     <section class="email-det">
     <div class="flex space-between send-mail-head"> <span>  {{subject}} </span> <span><i  @click="backToMails" class="fas fa-times"></i></span> </div>
     
     <div class="flex">
-          <button class="replayBtn" v-if="!isReply" @click="replaymail"><i class="fas fa-reply"></i>Reply</button>
-          <button class="replayBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i>Send</button>
+          <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
+          <button class="replyBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i> Send</button>
         <div class="flex column inputs-container">
-          <div class="flex"><button>Subject:</button><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>  </div> 
-          <div class="flex"><button @click="showMailsAdress=!showMailsAdress">SendTo:</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
+          <div class="flex"><button> Subject:</button><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>  </div> 
+          <div class="flex"><button @click="showMailsAddress=!showMailsAddress">Send To:</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
           <transition name="appear">
-                <div class="show-mails-adress" v-if='showMailsAdress'>
+                <div class="show-mails-address" v-if='showMailsAddress'>
               <h3>Regular contacts:</h3>  
               <ol>
                   <li>shahar.snir91@gmail.com</li>
-                  <li>baram.baram@gmail.com</li>
+                  <li>ofer.baram@gmail.com</li>
                 </ol>
               </div>       
               </transition>        
@@ -37,14 +37,13 @@ export default {
               </div>
 </div>
 `,
-  props: [],
   data() {
     return {
       email: null,
       isReply: false,
       newEmail: null,
       subject: '',
-      showMailsAdress: ''
+      showMailsAddress: ''
     };
   },
 
@@ -58,7 +57,7 @@ export default {
       subject: this.email.subject,
       name: 'snir&ofer',
       isRead: true,
-      sendAt: new Date().getHours() + ':' + new Date().getMinutes(),
+      sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
       isDeleted: false,
       sendto: this.email.sendto,
       isSent: true,
@@ -78,7 +77,7 @@ export default {
 
       this.$router.push('/mail');
     },
-    replaymail() {
+    replymail() {
       this.isReply = true;
       this.newEmail.subject = 'RE:' + this.newEmail.subject;
     },
@@ -88,5 +87,5 @@ export default {
       this.$router.push('/mail');
     }
   },
-  components: {appHeader, sideNav }
+  components: {appHeader, sideNav, utilService }
 };

@@ -2,12 +2,12 @@ import storageService from '../services/storage.service.js';
 import eventBus, { EMAILS_DB } from '../../../../services/event-bus.js';
 
 export default {
+    props: ['email', 'idx', 'emails'],
     template: `
           <transition name="appear">
     <li class="mail-prev flex align-center" :class="{ read: !email.isRead }" > 
         <span class="main-mail-spec flex align-center">             
-            <i 
-                @click="toogleFav" 
+            <i @click="toogleFav" 
                 :class="[email.isFav? 'fas' : 'far']"
                 class="fa-star"></i>   
             {{email.name}}             
@@ -17,7 +17,7 @@ export default {
             class="left subject"> 
               <router-link :to="emailUrl">{{email.subject | snippet}}</router-link>  
         </span> 
-        <span>{{email.sendAt}}</span>
+        <span>{{email.sentAt}}</span>
         <i  @click.stop="deleteEmail(idx)" class="fas fa-trash-alt" ></i>
      <span @click="toggleIsRead">
                       <i class="far fa-envelope-open" v-if="email.isRead"></i>
@@ -26,13 +26,12 @@ export default {
       </li>
       </transition>
 `,
-  props: ['email', 'idx', 'emails'],
   data() {
     return {};
   },
   computed: {
     emailUrl() {
-      return '/misterEmail/' + this.email._id;
+      return '/mail/' + this.email._id;
     }
   },
   methods: {

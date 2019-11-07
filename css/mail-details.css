@@ -1,0 +1,63 @@
+
+.email-det {
+    height: 81vh;
+    width: 83%;
+}
+
+.email-det div.send-mail-head {
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 2rem;
+}
+
+.email-det .inputs-container input {
+    width: 66.4vw;
+}
+
+.email-det button.replyBtn, .side button.replyBtn {
+    height: inherit;
+    background: rgb(197, 124, 56);
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 200px;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.email-det textarea {
+    width: 100%;
+    height: 90%;
+    font-size: 1.5rem;
+    resize: none;
+    padding: 20px;
+}
+
+.email-det button {
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.show-mails-address {
+    position: absolute;
+    top: 20.5%;
+    border: 1px black solid;
+    z-index: 100;
+    background: white;
+    padding: 25px;
+    line-height: 1.5
+}
+
+.sent-from {
+    padding: 10px;
+    font-weight: bold;
+    border: 1px rgb(196, 196, 196) solid;
+    width: 100%;
+}
+
+.fa-times {
+    cursor: pointer;
+}

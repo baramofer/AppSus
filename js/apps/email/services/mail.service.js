@@ -6,6 +6,8 @@ const MAIL_KEY = 'emailsDB';
 export default {
   getMails,
   getById,
+  updateDB,
+  saveEmailDB
 };
 
 function getMails() {
@@ -20,58 +22,88 @@ function getMails() {
 
 var emailsDB = [
   {
-    number: 'mail number 1',
+    _id: '1',
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'J. K. Working',
+    name: 'Mark Zuckerberg',
     isRead: false,
-    sentAt: '04:23'
+    sentAt: '04:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
   {
-    number: 'mail number 2',
+    _id: '2',
     body:
       'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Nested Routes is SATAN!',
-    name: 'Moses Burger',
+    name: 'Jeff Bezos',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
   {
-    number: 'mail number 3',
+    _id: '3',
     body:
       'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue, how are you buddy?',
-    name: 'Pizza Lila',
+    name: 'Bill Gates',
     isRead: false,
-    sentAt: '01:23'
+    sentAt: '01:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
   {
-    number: 'mail number 4',
+    _id: '4',
     body:
       'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Damn this framework is a badass!',
-    name: 'Jocelyn Bleeeeevins',
+    name: 'Warren Buffett',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
   {
-    number: 'mail number 5',
+    _id: '5',
     body:
       'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How Vue changed my life',
-    name: 'Joseph Hadad',
+    name: 'Lionel Messi',
     isRead: false,
-    sentAt: '01:22'
+    sentAt: '01:22',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
   {
-    number: 'mail number 6',
+    _id: '6',
     body:
       'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Do you know when will Sprint 4 start?',
-    name: 'Andy Herzog',
+    name: 'Cristiano Ronaldo',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isFav: false
   },
 ];
 
@@ -79,3 +111,12 @@ function getById(emailId) {
   const email = emailsDB.find(email => email._id === emailId);
   return email;
 }
+
+function updateDB(newEmail) {
+    emailsDB.unshift(newEmail);
+    storageService.store(MAIL_KEY, emailsDB);
+  }
+  
+  function saveEmailDB() {
+    storageService.store(MAIL_KEY, emailsDB);
+  }

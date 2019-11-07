@@ -1,11 +1,11 @@
 import countersCmp from './counter.cmp.js';
 
 export default {
-  name: 'Mailfilter',
+    props: [],
   template: `
     <section class="mail-filter flex ">
         <div class="flex align-center row-reverse">
-            <input type="text" v-model="filterBy.txt" @input="emitFilter" placeholder="🔍Search for mail" />
+            <input type="text" v-model="filterBy.txt" @input="emitFilter" placeholder="🔍 Search mail" />
    <select v-model="filterBy.isRead" @change="emitFilter($event)">
          <option value="All">All</option>
          <option value="Read">Read</option>
@@ -15,7 +15,6 @@ export default {
        </div>
         </section>
 `,
-  props: [],
   data() {
     return {
       filterBy: {

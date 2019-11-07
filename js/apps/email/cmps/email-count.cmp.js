@@ -2,13 +2,13 @@ import mailService from '../services/mail.service.js';
 import eventBus, { EMAILS_DB } from '../../../../services/event-bus.js';
 
 export default {
+  props: [],
   template: `
     <section class="mail-count flex  both-align-center"> 
                 <span>Email Count: </span>
                 <span class="count">    {{mailsToReadShow}}/{{emails}}</span>
     </section>
 `,
-  props: [],
   data() {
     return {
       emails: null,
@@ -17,8 +17,8 @@ export default {
     };
   },
   created() {
-    this.emails = mailService.query().length;
-    this.mailsToRead = mailService.query().filter(email => {
+    this.emails = mailService.getMails().length;
+    this.mailsToRead = mailService.getMails().filter(email => {
       return !email.isRead;
     });
     this.mailsToReadShow = this.mailsToRead.length;
