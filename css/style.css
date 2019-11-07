@@ -10,6 +10,8 @@ body{
     padding: 0;
     margin: 0;
     font-family: Poppins;
+    height: 100vh;
+    width: 100vw;
 }
 nav{
     font-size: 20px;
@@ -260,6 +262,7 @@ border-radius: 5px;
     top: 82px;
     background-color: rgb(202, 202, 202);
     z-index: -10000;
+    display: none;
 }
 iframe{
     height: 72%;
