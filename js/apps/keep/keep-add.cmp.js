@@ -23,7 +23,8 @@ export default {
     },
     methods:{
         addNote(){
-            this.$emit('noteAdd', this.typeSelected, this.content)            
+            this.$emit('noteAdd', this.typeSelected, this.content) 
+            this.content=null           
         },
         isClicked(value){
            this.typeSelected = value

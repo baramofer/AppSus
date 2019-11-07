@@ -5,7 +5,7 @@ export default {
     template: `
     <div class="note-preview-container" :class="note.color" >
         <div></div>
-        <div ref="inputEdit" @dblclick.stop="textToogleOpen"><a :href="note.content" target="_blank">
+        <div ref="inputEdit" @dblclick.stop="textToogleOpen"><a :href="urlValid" target="_blank">
         {{note.content}}</a></div>
 
         <div class="toolBar">
@@ -49,6 +49,10 @@ export default {
         },
     },
     computed:{
+        urlValid(){
+            if(!this.note.content.includes('http://')) return this.note.content='http://'+this.note.content;
+            return this.note.content
+        },
         limitedText(){
             if(this.editToggle.length > 100) console.log('100');
             
