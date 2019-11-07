@@ -1,3 +1,4 @@
+@import "/css/mail-details.css";
 
 @font-face {
     font-family: Poppins;
@@ -187,7 +188,7 @@ border-radius: 5px;
 }
 
 .side ul li:hover {
-    transform: scale(0.9);
+    transform: scale(0.97);
     border: 1px solid rgba(137, 137, 223, 0.5);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -199,7 +200,7 @@ border-radius: 5px;
     border: 4px rgb(230, 101, 27) solid;
     border-radius: 20px;
     margin-right: 10px;
-    box-shadow: 0px 4px 5px 0px rgba(255, 127, 80, 0.815);
+    box-shadow: 0px 2px 5px 0px rgba(255, 127, 80, 0.815);
     background: white;
 }
 
@@ -313,3 +314,14 @@ iframe{
     .burger{
         display: block;
     }
+
+li {
+    list-style: none;
+}
+
+.sort-btn {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+}

@@ -2,7 +2,7 @@ export default {
     makeId
 };
 
-function makeId(length = 5) {
+function makeId(length = 8) {
     var text = '';
     var possible =
 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

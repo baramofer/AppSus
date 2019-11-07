@@ -5,7 +5,9 @@ const MAIL_KEY = 'emailsDB';
 
 export default {
   getMails,
-//   getById,
+  getById,
+  updateDB,
+  saveEmailDB
 };
 
 function getMails() {
@@ -20,62 +22,269 @@ function getMails() {
 
 var emailsDB = [
   {
-    number: 'mail number 1',
+    _id: '1',
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'J. K. Working',
+    name: 'Mark Zuckerberg',
     isRead: false,
-    sentAt: '04:23'
+    sentAt: '04:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
   {
-    number: 'mail number 2',
+    _id: '2',
     body:
       'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
-    name: 'Moses Burger',
+    subject: 'Nested Routes is SATAN!',
+    name: 'Jeff Bezos',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
   {
-    number: 'mail number 3',
+    _id: '3',
     body:
       'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
-    name: 'Pizza Lila',
+    subject: 'Hello Vue, how are you buddy?',
+    name: 'Bill Gates',
     isRead: false,
-    sentAt: '01:23'
+    sentAt: '01:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
   {
-    number: 'mail number 4',
+    _id: '4',
     body:
       'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
-    name: 'Jocelyn Bleeeeevins',
+    subject: 'Damn this framework is a badass!',
+    name: 'Warren Buffett',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
   {
-    number: 'mail number 5',
+    _id: '5',
     body:
       'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
-    name: 'Joseph Hadad',
+    subject: 'How Vue changed my life',
+    name: 'Lionel Messi',
     isRead: false,
-    sentAt: '01:22'
+    sentAt: '01:22',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
   {
-    number: 'mail number 6',
+    _id: '6',
     body:
       'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
-    subject: 'How to use vue in everyday cooking!',
-    name: 'Andy Herzog',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Cristiano Ronaldo',
     isRead: false,
-    sentAt: '04:20'
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '7',
+    body:
+      'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Hello Vue! how are you?',
+    name: 'Mark Zuckerberg',
+    isRead: false,
+    sentAt: '04:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '8',
+    body:
+      'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Nested Routes is SATAN!',
+    name: 'Jeff Bezos',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '9',
+    body:
+      'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Hello Vue, how are you buddy?',
+    name: 'Bill Gates',
+    isRead: false,
+    sentAt: '01:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '10',
+    body:
+      'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Damn this framework is a badass!',
+    name: 'Warren Buffett',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '11',
+    body:
+      'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'How Vue changed my life',
+    name: 'Lionel Messi',
+    isRead: false,
+    sentAt: '01:22',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '12',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Cristiano Ronaldo',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '13',
+    body:
+      'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Hello Vue! how are you?',
+    name: 'Mark Zuckerberg',
+    isRead: false,
+    sentAt: '04:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '14',
+    body:
+      'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Nested Routes is SATAN!',
+    name: 'Jeff Bezos',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '15',
+    body:
+      'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Hello Vue, how are you buddy?',
+    name: 'Bill Gates',
+    isRead: false,
+    sentAt: '01:23',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '16',
+    body:
+      'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Damn this framework is a badass!',
+    name: 'Warren Buffett',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '17',
+    body:
+      'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'How Vue changed my life',
+    name: 'Lionel Messi',
+    isRead: false,
+    sentAt: '01:22',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '18',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Cristiano Ronaldo',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
   },
 ];
 
-// function getById(emailId) {
-//   const email = emailsDB.find(email => email._id === emailId);
-//   return email;
-// }
+function getById(emailId) {
+  const email = emailsDB.find(email => email._id === emailId);
+  return email;
+}
+
+function updateDB(newEmail) {
+    emailsDB.unshift(newEmail);
+    storageService.store(MAIL_KEY, emailsDB);
+  }
+  
+  function saveEmailDB() {
+    storageService.store(MAIL_KEY, emailsDB);
+  }
