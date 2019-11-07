@@ -274,7 +274,7 @@ iframe{
     padding: 10px 5px 0 5px;
 }
 .keep-search-container{
-    margin: 0 auto;
+    margin: 5px auto;
     background-color: rgb(211, 211, 211);
     width: 90%;
     display: flex;
@@ -357,7 +357,7 @@ iframe{
 .note-preview-container{
     border-radius: 5px;
     width: 95%;
-    margin: 10px 2px;
+    margin: 9px 2px;
     padding: 10px;
     font-size: 16px;
     color: rgb(43, 43, 43);
