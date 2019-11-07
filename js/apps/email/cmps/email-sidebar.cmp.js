@@ -14,8 +14,8 @@ export default {
               <li class="send-mail" @click="showSendMailModal"><i class="fas fa-plus"></i> Compose</li>
               <li :class="{picked:state.mails}"   class="flex flex-space-around" @click="sendPickedEmails(1)"><i class="fas fa-inbox"></i> Inbox</li>
               <li :class="{picked:state.sent}" class="flex flex-space-around" @click="sendPickedEmails(2)"><i class="fas fa-share"></i> Sent</li>
-              <li class="starred-mail"><i class="fas fa-star"></i> Starred</li>
-                <li :class="{picked:state.deleted}" class="flex flex-space-around" @click="sendPickedEmails(3)"><i class="fas fa-trash"></i> Trash</li>
+              <li :class="{picked:state.deleted}" class="flex flex-space-around" @click="sendPickedEmails(3)"><i class="fas fa-trash"></i> Trash</li>
+              <li :class="{picked:state.starred}" class="flex flex-space-around"  @click="sendPickedEmails(4)"><i class="fas fa-star"></i> Starred</li>
               </ul>
               <transition name="slide-fade">
               <div class="send-modal" v-if="sendmodal">
@@ -51,7 +51,8 @@ export default {
         sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
         isDeleted: false,
         sendto: '',
-        isSent: true
+        isSent: true,
+        isStarred: false
       },
       note: null
     };
@@ -77,17 +78,19 @@ export default {
         sentAt: new Date(),
         isDeleted: false,
         sendto: '',
-        isSent: true
+        isSent: true,
+        isStarred: false
       };
       this.sendmodal = !this.sendmodal;
     },
     sendPickedEmails(emailsType) {
       this.pickedEmails = emailsType;
       eventBus.$emit(PICKED_EMAIL_STATE, this.pickedEmails);
-      this.state = { mails: false, sent: false, deleted: false };
+      this.state = { mails: false, sent: false, deleted: false, starred: false};
       if (emailsType === 1) this.state.mails = true;
       if (emailsType === 2) this.state.sent = true;
       if (emailsType === 3) this.state.deleted = true;
+      if (emailsType === 4) this.state.starred = true;
       this.$router.push('/mail');
     }
   },

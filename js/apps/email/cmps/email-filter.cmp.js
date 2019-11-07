@@ -10,7 +10,7 @@ export default {
          <option value="All">All</option>
          <option value="Read">Read</option>
         <option value="UnRead">Unread</option>
-        <option value="fav">Starred ⭐</option>
+        <option value="star">Starred ⭐</option>
   </select>
        </div>
         </section>
@@ -20,7 +20,7 @@ export default {
       filterBy: {
         txt: '',
         isRead: 'All',
-        isFav: false
+        isStarred: true
       }
     };
   },

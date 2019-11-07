@@ -22,8 +22,8 @@ export default {
                 <div class="show-mails-address" v-if='showMailsAddress'>
               <h3>Regular contacts:</h3>  
               <ol>
-                  <li>shahar.snir91@gmail.com</li>
-                  <li>ofer.baram@gmail.com</li>
+                  <li>snir@gmail.com</li>
+                  <li>ofer@gmail.com</li>
                 </ol>
               </div>       
               </transition>        
@@ -61,7 +61,7 @@ export default {
       isDeleted: false,
       sendto: this.email.sendto,
       isSent: true,
-      isFav: false
+      isStarred: false
     };
   },
   mounted() {},

@@ -12,8 +12,8 @@ template: `<section class="mail-list">
       <email-filter @filterapp="setFilter"></email-filter>
     <li class="flex space-between emails-titles"> 
       <span> Sent From </span> 
-      <span :class="{picked:sort.subject }" @click="sortSubject"> Subject </span> 
-      <span :class="{picked:sort.date }" @click="sortDate">Date Received </span>
+      <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
+      <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
     </li>
   <email-preview 
   :idx="idx" 
@@ -41,6 +41,9 @@ data() {
 },
   created() {
     this.emails = mailservice.getMails();
+    eventBus.$on(PICKED_EMAIL_STATE, state => {
+      this.currentEmailsState = state;
+    })
   },
   computed: {
     filterdEmails: function() {
@@ -65,10 +68,10 @@ data() {
             !email.isRead &&
             email.subject.toLowerCase().includes(this.filter.txt.toLowerCase())
         );
-      } else if (this.filter.isRead === 'fav') {
+      } else if (this.filter.isRead === 'star') {
         this.temp = this.emails.filter(
           email =>
-            email.isFav &&
+            email.isStarred &&
             email.subject.toLowerCase().includes(this.filter.txt.toLowerCase())
         );
       }
@@ -78,6 +81,9 @@ data() {
         return this.temp.filter(email => email.isSent);
       } else if (this.currentEmailsState === 3) {
         return this.temp.filter(email => email.isDeleted);
+      }
+      else if (this.currentEmailsState === 4) {
+        return this.temp.filter(email => email.isStarred);
       }
     }
   },

@@ -7,9 +7,9 @@ export default {
           <transition name="appear">
     <li class="mail-prev flex align-center" :class="{ read: !email.isRead }" > 
         <span class="main-mail-spec flex align-center">             
-            <i @click="toogleFav" 
-                :class="[email.isFav? 'fas' : 'far']"
-                class="fa-star"></i>   
+            <i @click="toggleStar" 
+                :class="[email.isStarred? 'fas' : 'far']"
+                class="fa-star cursor-pointer"></i>   
             {{email.name}}
         </span>
         <span 
@@ -18,10 +18,10 @@ export default {
               <router-link :to="emailUrl">{{email.subject | snippet}}</router-link>  
         </span> 
         <span>{{email.sentAt}}</span>
-        <i  @click.stop="deleteEmail(idx)" class="fas fa-trash-alt" ></i>
+        <i  @click.stop="deleteEmail(idx)" class="fas fa-trash-alt cursor-pointer" ></i>
      <span @click="toggleIsRead">
-                      <i class="far fa-envelope-open" v-if="email.isRead"></i>
-                      <i class="fas fa-envelope" v-else></i>
+                      <i class="far fa-envelope-open cursor-pointer" v-if="email.isRead"></i>
+                      <i class="fas fa-envelope cursor-pointer" v-else></i>
                     </span>
       </li>
       </transition>
@@ -40,8 +40,8 @@ export default {
       storageService.store('emailsDB', this.emails);
       //TODO: emit to list so it will delete it - also for toggleRead and togglefav.
     },
-    toogleFav() {
-      this.email.isFav = !this.email.isFav;
+    toggleStar() {
+      this.email.isStarred = !this.email.isStarred;
     },
     toggleIsRead(status) {
       if (status === 'noToggle') {

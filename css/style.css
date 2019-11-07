@@ -238,3 +238,8 @@ li {
     list-style: none;
 }
 
+.sort-btn {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+}
