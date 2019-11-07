@@ -44,11 +44,6 @@ function createNote(type, content, color){
     }
 }
 
-// function getBookById(bookId){
-//     let currBook = gBooks.find(book=> book.id===bookId)
-//     return Promise.resolve(currBook)
-// }
-
 function _findNote(noteId) {
     return Promise.resolve(gNotes.find((note)=>note.id===noteId))
 }
@@ -64,14 +59,17 @@ function deleteNote(noteId){
 function cloneNote(noteId){
     _findNote(noteId)
         .then(note => {
-            gNotes.push(note)
+            gNotes.push(createNote(note.type, note.content, note.color))
             utilService.saveToStorage(STORAGE_KEY, gNotes)
         }
 )}
 
-function editNote(noteId){
+function editNote(noteId, value){
     _findNote(noteId)
-        .then(note => gNotes.splice(note, 1)
+    .then(note => {
+        note.content = value;
+        utilService.saveToStorage(STORAGE_KEY, gNotes)
+    }
 )}
 
 function tackNote(noteId){
@@ -87,6 +85,11 @@ function changeColorNote(noteId, color){
         utilService.saveToStorage(STORAGE_KEY, gNotes)
     }
 )}
+
+// function getBookById(bookId){
+//     let currBook = gBooks.find(book=> book.id===bookId)
+//     return Promise.resolve(currBook)
+// }
 
 // function findBookIdx(bookId){
 //     return gBooks.findIndex(book => book.id===bookId)

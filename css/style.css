@@ -77,7 +77,7 @@ nav{
     height: 100px;
     position: relative;
 }
-.note-preview-container .toolsToggle{
+.note-preview-container .colorToggle{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,13 +91,21 @@ nav{
     width: 80%;
     border-radius: 10px;
 }
-.toolsToggle{
+.colorToggle{
     display: flex;
 }
-.toolsToggle img{
+.colorToggle img{
     padding: 5px;
     height: 20px;
     width: 20px;
+}
+.colorToggle input{
+    padding: 10px;
+    color: gray;
+    font-family: poppins;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
 }
 
 .note-preview-container{
@@ -112,7 +120,7 @@ nav{
     background-color: rgba(6, 176, 255, 0.1);
 }
 .note-preview-container.green{
-    background-color: rgba(6, 255, 48, 0.1);
+    background-color: rgba(6, 255, 48, 0.383);
 }
 .note-preview-container.yellow{
     background-color: rgba(255, 189, 6, 0.1);

@@ -1,11 +1,11 @@
 export default {
     template: `
     <section class="note-filter-container">
-        <!-- <form @submit.prevent="onFilter">
+        <form @submit.prevent="onFilter">
             name:
-            <input type="text" placeholder="Book Name" v-model="filterBy" />
+            <input type="text" placeholder="Search note" v-model="filterBy" />
             <button>Filter it</button>
-        </form> -->
+        </form>
     </section>
     `,
     data() {
@@ -15,14 +15,14 @@ export default {
     },
     methods: {
         onFilter(){
-            // console.log(this.filterBy);
-            // this.$emit('filtered', this.filterBy)
-            // this.filterBy=''
+            console.log(this.filterBy);
+            this.$emit('filtered', this.filterBy)
+            this.filterBy=''
         }
     },
     computed:{
     },
     created() {
-        // this.$emit('filtered', this.filterBy)
+        this.$emit('filtered', this.filterBy)
     }
 }
