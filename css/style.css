@@ -317,6 +317,13 @@ iframe{
 .nav-container{
     display: none;        
 }
+.header-container .logo{
+    padding: 6px;
+    font-size: 34px;
+}
+.header-container{
+    padding: 0 10px;
+}
 .burger{
     display: block;
 }
@@ -325,22 +332,23 @@ iframe{
 }
 .keep-search-container{
     padding: 5px;
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.keep-search-container input{
+    text-align: center;
 }
     
 .note-preview-container img{
     padding: 3px;
 }
-
 .note-preview-container .colorToggle{
     height: 40%;
     width: 95%;
 }
 .note-preview-container{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; */
     border-radius: 5px;
     width: 38%;
     margin: 5px;
@@ -350,6 +358,7 @@ iframe{
 }
 .search-buttons-container{
     margin: 5px;
+    width: 90%;
 }
 
 li {
