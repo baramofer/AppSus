@@ -224,3 +224,7 @@ border-radius: 5px;
 .send-modal i {
     cursor: pointer;
 }
+
+li {
+    list-style: none;
+}

@@ -1,9 +1,10 @@
 import utilService from '../services/util.service.js';
 import mailService from '../services/mail.service.js';
-// import eventBus, {
-//   PICKED_EMAIL_STATE,
+import eventBus, {
+  PICKED_EMAIL_STATE,
 //   NOTE_EMAIL
-// } from '../../../event-bus.js';
+} from '../../../../services/event-bus.js';
+
 export default {
   name: 'mailSide',
   template: `
@@ -11,13 +12,13 @@ export default {
         <div class="flex column side center  "> 
             <ul>    
               <li class="send-mail" @click="showSendMailModal"><i class="fas fa-plus"></i> Compose</li>
+              <li :class="{picked:state.mails}"   class="flex flex-space-around" @click="sendPickedEmails(1)"><i class="fas fa-inbox"></i> Inbox</li>
+              <li :class="{picked:state.sent}" class="flex flex-space-around" @click="sendPickedEmails(2)"><i class="fas fa-share"></i> Sent</li>
               <li class="starred-mail"><i class="fas fa-star"></i> Starred</li>
-                <li :class="{picked:state.mails}"   class="flex flex-space-around" @click="sendPickedEmails(1)"><i class="fas fa-inbox"></i> Inbox</li>
-                <li :class="{picked:state.sent}" class="flex flex-space-around" @click="sendPickedEmails(2)"><i class="fas fa-share"></i> Sent Mail</li>
                 <li :class="{picked:state.deleted}" class="flex flex-space-around" @click="sendPickedEmails(3)"><i class="fas fa-trash"></i> Trash</li>
               </ul>
 
-              <!-- <transition name="slide-fade">
+              <transition name="slide-fade">
 
               <div class="send-modal" v-if="sendmodal">
                 <div class="flex space-between send-mail-head"> <span>  New Messege </span> <span><i @click=showSendMailModal class="fas fa-times"></i></span> </div>
@@ -31,7 +32,7 @@ export default {
                 <textarea name="" id="" v-model="newemail.body" placeholder="Enter your email here:"></textarea>
               </div>
               
-              </transition> -->
+              </transition>
         </div>
 
     </section>
