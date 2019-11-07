@@ -9,7 +9,7 @@ export default {
 props: [],
 template: `<section class="mail-list">
   <ul>
-      <email-filter @filterapp="setFilterrr"></email-filter>
+      <email-filter @filterapp="setFilter"></email-filter>
     <li class="flex space-between emails-titles"> 
       <span> Sent From </span> 
       <span :class="{picked:sort.subject }" @click="sortSubject"> Subject </span> 
@@ -40,7 +40,6 @@ data() {
   };
 },
   created() {
-    // console.log('loaded the mail-list');
     this.emails = mailservice.getMails();
   },
   computed: {
@@ -83,7 +82,7 @@ data() {
     }
   },
   methods: {
-    setFilterrr(filterBy) {
+    setFilter(filterBy) {
       this.filter = filterBy;
     },
     sortSubject() {
@@ -104,7 +103,6 @@ data() {
     sortDate() {
       this.sort.subject = false;
       this.sort.date = true;
-
       this.emails.sort((email1, email2) => {
         if (email1.sentAt > email2.sentAt) {
           return 1;

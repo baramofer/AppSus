@@ -29,7 +29,6 @@ export default {
   computed: {},
   methods: {
     emitFilter(event) {
-    //   console.log(this.filterBy);
       this.$emit('filterapp', this.filterBy);
     }
   },

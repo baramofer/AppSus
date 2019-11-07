@@ -24,8 +24,6 @@ const myRoutes = [
     //     path: '/book',
     //     component: bookApp
     // },
-   
-    
 ]
 const myRouter = new VueRouter({routes: myRoutes})
 

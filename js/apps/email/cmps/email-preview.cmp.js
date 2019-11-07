@@ -10,7 +10,7 @@ export default {
             <i @click="toogleFav" 
                 :class="[email.isFav? 'fas' : 'far']"
                 class="fa-star"></i>   
-            {{email.name}}             
+            {{email.name}}
         </span>
         <span 
             @click="toggleIsRead('noToggle')" 

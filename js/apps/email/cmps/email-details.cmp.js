@@ -6,12 +6,11 @@ import appHeader from '../../../../js/pages/app-header.cmp.js'
 export default {
     props: [],
   template: `
-  <div>
   <!-- <header-cmp></header-cmp> -->
-      <div class="flex">
+      <div class="email-main-container">
       <side-nav></side-nav>
     <section class="email-det">
-    <div class="flex space-between send-mail-head"> <span>  {{subject}} </span> <span><i  @click="backToMails" class="fas fa-times"></i></span> </div>
+    <div class="flex space-between send-mail-head"><span>{{subject}}</span><span><i @click="backToMails" class="fas fa-times"></i></span></div>
     
     <div class="flex">
           <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
@@ -31,11 +30,12 @@ export default {
           </div>
         </div>
       </div>
+      <div class="curr-mail">
       <div class="sent-from"> Sent From: {{email.name}}</div>
                 <textarea name="" id="" v-model="newEmail.body"></textarea>
+                </div>
                  </section>
               </div>
-</div>
 `,
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
       _id: this.email._id,
       body: this.email.body,
       subject: this.email.subject,
-      name: 'snir&ofer',
+      name: 'Snir&Ofer',
       isRead: true,
       sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
       isDeleted: false,
