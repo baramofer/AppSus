@@ -1,5 +1,8 @@
 @import "/css/mail-details.css";
 
+*{
+    box-sizing: border-box;
+}
 @font-face {
     font-family: Poppins;
     src: url('../fonts/poppin/Poppins-Regular.ttf');
@@ -318,7 +321,7 @@ iframe{
     display: none;        
 }
 .header-container .logo{
-    padding: 6px;
+    padding: 0;
     font-size: 34px;
 }
 .header-container{
