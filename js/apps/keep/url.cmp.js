@@ -5,7 +5,8 @@ export default {
     template: `
     <div class="note-preview-container" :class="note.color" >
         <div></div>
-        <div ref="inputEdit" @dblclick.stop="textToogleOpen">{{note.content}}</div>
+        <div ref="inputEdit" @dblclick.stop="textToogleOpen"><a :href="note.content" target="_blank">
+        {{note.content}}</a></div>
 
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
