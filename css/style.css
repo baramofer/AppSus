@@ -325,13 +325,16 @@ iframe{
     font-size: 34px;
 }
 .header-container{
-    padding: 0 10px;
+    padding: 4px 14px;
 }
 .burger{
     display: block;
 }
 .main-container{
     margin: 0;
+}
+.notes-list-container{
+    justify-content: space-evenly;
 }
 .keep-search-container{
     padding: 5px;
@@ -353,8 +356,8 @@ iframe{
 }
 .note-preview-container{
     border-radius: 5px;
-    width: 38%;
-    margin: 5px;
+    width: 43%;
+    margin: 10px 2px;
     padding: 10px;
     font-size: 16px;
     color: rgb(43, 43, 43);
