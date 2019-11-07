@@ -333,6 +333,18 @@ iframe{
 .main-container{
     margin: 0;
 }
+.note-preview-container .toolBar{
+    justify-content: space-around;
+    width: 70%;
+}
+.note-preview-container .toolBar i{
+    padding: 10px 4px;
+    font-size: 14px;
+}
+.colorToggle img{
+    height: 30px;
+    width: 30px;
+}
 .notes-list-container{
     justify-content: space-evenly;
 }
@@ -346,20 +358,24 @@ iframe{
 .keep-search-container input{
     text-align: center;
 }
-    
+iframe{
+    height: 80%;
+    width: 100%;
+    padding: 2px 1px 0 1px;
+}
 .note-preview-container img{
-    padding: 3px;
+    padding: 5px;
 }
 .note-preview-container .colorToggle{
-    height: 40%;
+    height: 55%;
     width: 60%;
 }
 .note-preview-container{
     border-radius: 5px;
     width: 95%;
-    margin: 9px 2px;
+    margin: 9px 4px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(43, 43, 43);
 }
 .search-buttons-container{
