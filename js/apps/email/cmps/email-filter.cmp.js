@@ -9,8 +9,7 @@ export default {
    <select v-model="filterBy.isRead" @change="emitFilter($event)">
          <option value="All">All</option>
          <option value="Read">Read</option>
-        <option value="UnRead">Unread</option>
-        <option value="star">Starred ⭐</option>
+        <option value="Unread">Unread</option>
   </select>
        </div>
         </section>
