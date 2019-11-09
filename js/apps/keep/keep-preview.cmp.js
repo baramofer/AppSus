@@ -43,7 +43,7 @@ export default {
             
         },
         onNoteChange(noteId, type, action, value){
-            console.log(noteId, type ,action, value);
+            console.log('preview', noteId, type ,action, value);
             this.$emit('noteChange', noteId, type, action, value)            
         },
     },

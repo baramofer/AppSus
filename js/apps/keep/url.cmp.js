@@ -17,7 +17,7 @@ export default {
         </div>
         <div class="colorToggle" v-show="textToggle">
             <input ref="inputEdit" type="text"  v-model="editToggle" @input="onNoteChange(note.id, note.type, 'edit', editToggle)" 
-            @blur="textToggle=false">
+            @blur="textToggle=false" @keyup.enter="textToggle=false">
         </div>
         <div class="colorToggle" v-if="colorToggle">
             <img @click="onNoteChange(note.id, note.type, 'changeColor', 'red')" src="./img/c_red.png" alt=""/>
