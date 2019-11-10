@@ -2,6 +2,7 @@
 .side {
     font-size: 1.1rem;
     padding: 0px;
+    
 }
 
 .side ul {
@@ -96,6 +97,9 @@ li {
 }
 
 @media (max-width: 760px) {
+.side  {
+    width: 100%;
+}   
 .side-mail-ul{
         flex-direction: row;
         width: 100%;
