@@ -33,5 +33,4 @@ export default {
             this.typeSelected = value
         }
     },
-
 }    

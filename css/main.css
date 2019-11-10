@@ -113,6 +113,7 @@ nav{
     font-size: 16px;
     color: rgb(43, 43, 43);
     position: relative;
+    column-fill: auto;
 }
 .note-preview-container .colorToggle{
     display: flex;

@@ -40,7 +40,7 @@ export default {
     };
   },
   created() {
-    this.emails = mailservice.getMails();
+    this.emails = mailservice.getMails()
     eventBus.$on(PICKED_EMAIL_STATE, state => {
       this.currentEmailsState = state;
     })

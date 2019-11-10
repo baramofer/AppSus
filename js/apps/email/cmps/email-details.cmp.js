@@ -78,7 +78,6 @@ export default {
     },
     backToMails() {
       mailService.saveEmailDB();
-
       this.$router.push('/mail');
     }
   },
