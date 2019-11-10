@@ -8,7 +8,9 @@ export default {
         <section class="email-main-container">
             <email-list></email-list>
                 <div class="flex column side center">
-            <side-nav></side-nav>
+            <side-nav>
+            <router-view></router-view>
+            </side-nav>
             <div class="emails-container">
             </div>
         </div>

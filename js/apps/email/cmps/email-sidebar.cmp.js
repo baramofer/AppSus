@@ -2,11 +2,9 @@ import utilService from '../services/util.service.js';
 import mailService from '../services/mail.service.js';
 import eventBus, {
   PICKED_EMAIL_STATE,
-  //   NOTE_EMAIL
 } from '../../../../services/event-bus.js';
 
 export default {
-  props: [],
   template: `
     <section class="mail-side flex">
             <ul class="side-mail-ul">

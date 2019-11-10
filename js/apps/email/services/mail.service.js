@@ -16,7 +16,7 @@ function getMails() {
     storageService.store(MAIL_KEY, emails);
   }
   emailsDB = emails;
-  return emailsDB;
+  return emailsDB
 }
 
 var emailsDB = [
@@ -25,7 +25,7 @@ var emailsDB = [
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'Mark Zuckerberg',
+    name: 'Ann Levi',
     isRead: false,
     sentAt: '04:23',
     isDeleted: false,
@@ -109,7 +109,7 @@ var emailsDB = [
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'Mark Zuckerberg',
+    name: 'Avi Levi',
     isRead: false,
     sentAt: '04:23',
     isDeleted: false,
@@ -193,7 +193,7 @@ var emailsDB = [
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'Mark Zuckerberg',
+    name: 'Jhon Doe',
     isRead: false,
     sentAt: '04:23',
     isDeleted: false,
