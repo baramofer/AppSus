@@ -1,14 +1,14 @@
 // import userMsg from './cmps/user-msg.cmp.js';
 
-import keepFilter from './keep-filter.cmp.js';
-import keepList from './keep-list.cmp.js';
+import keepFilter from './cmps/keep-filter.cmp.js';
+import keepList from './cmps/keep-list.cmp.js';
 import keepService from './service/keep.service.js'
-import keepAdd from './keep-add.cmp.js'
-import textBox from './text-box.cmp.js'
-import youtube from './youtube.cmp.js'
-import url from './url.cmp.js'
-import imgNote from './img-note.cmp.js'
-import todo from './todo.cmp.js'
+import keepAdd from './cmps/keep-add.cmp.js'
+import textBox from './cmps/text-box.cmp.js'
+import youtube from './cmps/youtube.cmp.js'
+import url from './cmps/url.cmp.js'
+import imgNote from './cmps/img-note.cmp.js'
+import todo from './cmps/todo.cmp.js'
 
 
 export default {
