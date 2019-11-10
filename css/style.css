@@ -6,6 +6,9 @@
 @import "/css/mail-side.css";
 @import "/css/mail-status.css";
 
+*{
+    box-sizing: border-box;
+}
 @font-face {
     font-family: Poppins;
     src: url('../fonts/poppin/Poppins-Regular.ttf');
@@ -16,6 +19,8 @@ body{
     padding: 0;
     margin: 0;
     font-family: Poppins;
+    height: 100vh;
+    width: 100vw;
 }
 nav{
     font-size: 20px;
@@ -26,6 +31,7 @@ nav{
 }
 
 .header-container{
+    /* position: relative; */
     display: flex;
     position: sticky;
     align-items: center;
@@ -37,6 +43,8 @@ nav{
     -moz-box-shadow: 0px -9px 10px 10px rgba(0,0,0,0.3);
     box-shadow: 0px -9px 10px 10px rgba(0,0,0,0.3);
     z-index: 10000;
+    left: 0;
+    right: 0;
     
 }
 .header-container .logo{
@@ -55,7 +63,6 @@ nav{
     color: rgba(255, 127, 80, 0.815);
 }
 
-
 .notes-list-container{
     display: flex;
     flex-wrap: wrap;
@@ -63,25 +70,30 @@ nav{
     position: relative;
 }
 .note-preview-container .toolBar{
-    position: absolute;
-    bottom: 15px;
     display: flex;
-    justify-content: space-between;
-    width: 40%;
+    justify-content: space-around;
+    width: 90%;
+}
+.note-preview-container .toolBar i{
+    padding: 10px 4px;
+    font-size: 18px;
+}
+.note-preview-container a{
+    text-decoration: none;
 }
 
 .note-preview-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+    justify-content: space-between;
+    border-radius: 3px;
     width: 28%;
     margin: 8px;
     border: rgba(0, 0, 0, 0.041) 1px solid;
     padding: 10px;
-    font-size: 13px;
+    font-size: 16px;
     color: rgb(43, 43, 43);
-    height: 100px;
     position: relative;
 }
 .note-preview-container .colorToggle{
@@ -89,14 +101,23 @@ nav{
     justify-content: center;
     align-items: center;
     position: absolute;
+    transform: translate(-50%, -50%);
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
     color: blue;
     z-index: 1;
     background-color: rgba(252, 252, 252, 0.904);
     height: 50%;
     width: 80%;
     border-radius: 10px;
+}
+
+.note-preview-container img{
+    height: 72%;
+    width: 90%;
+    border: 0;
+    padding: 10px 5px 0 5px;
+    
 }
 .colorToggle{
     display: flex;
@@ -153,4 +174,230 @@ nav{
 .current-mail {
 border: 2px rgba(255, 127, 80, 0.815) solid;
 border-radius: 5px;
+}
+
+.side {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80% 100%;
+    justify-content: center;
+    height: 84vh;
+    width: 18vw;
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+.side ul {
+    list-style-type: none;
+}
+
+.side ul li {
+    padding: 10px 10px;
+    color: black;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    padding: 19px;
+}
+
+.side ul li:hover {
+    transform: scale(0.97);
+    border: 1px solid rgba(137, 137, 223, 0.5);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.side ul li.send-mail {
+    border: none;
+    margin-bottom: 50px;
+    border: 4px rgb(230, 101, 27) solid;
+    border-radius: 20px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 5px 0px rgba(255, 127, 80, 0.815);
+    background: white;
+}
+
+.send-modal {
+    height: 600px;
+    width: 500px;
+    border-radius: 10px;
+    position: absolute;
+    right: 2%;
+    bottom: 3%;
+    border: 5px black solid;
+    background: rgb(51, 51, 51, 0.9);
+    box-shadow: 0px 4px 23px 0px rgba(0, 0, 0, 0.75);
+}
+
+.send-mail-head {
+    background: rgb(155, 141, 141);
+    height: 5%;
+    padding: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.send-modal input {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+}
+
+.send-mail-inputs {
+    width: 100%
+}
+
+.send-modal textarea {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 80%;
+    resize: none;
+}
+
+.send-modal i {
+    cursor: pointer;
+}
+.burger{
+    display: none;  
+    font-size: 40px; 
+    color: rgba(255, 127, 80, 0.815);     
+}
+.burger-menu{
+    height: 100vh;
+    width: 30%;
+    position: absolute;
+    right: -100%;
+    top: 82px;
+    background-color: rgb(202, 202, 202);
+    z-index: -10000;
+    display: none;
+}
+iframe{
+    height: 72%;
+    width: 90%;
+    border: 0;
+    padding: 10px 5px 0 5px;
+}
+.keep-search-container{
+    margin: 5px auto;
+    background-color: rgb(211, 211, 211);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 20px;
+}
+.keep-search-container form{
+    flex: 2;
+    display: flex;
+}
+.keep-add-form-container input{
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-family: poppins;
+    font-size: 20px;
+}
+.keep-add-form-container button{
+    width: 40%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-family: poppins;
+}
+.search-buttons-container{
+    flex:1;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 28px;
+}
+.search-buttons-container i{
+    opacity: 0.2;
+    padding: 8px;
+}
+.search-buttons-container .unclicked{
+    opacity: 0.7;
+}
+
+
+@media (max-width: 760px) {
+.nav-container{
+    display: none;        
+}
+.header-container .logo{
+    padding: 0;
+    font-size: 34px;
+}
+.header-container{
+    padding: 4px 14px;
+}
+.burger{
+    display: block;
+}
+.main-container{
+    margin: 0;
+}
+.note-preview-container .toolBar{
+    justify-content: space-around;
+    width: 70%;
+}
+.note-preview-container .toolBar i{
+    padding: 10px 4px;
+    font-size: 14px;
+}
+.colorToggle img{
+    height: 30px;
+    width: 30px;
+}
+.notes-list-container{
+    justify-content: space-evenly;
+}
+.keep-search-container{
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.keep-search-container input{
+    text-align: center;
+}
+iframe{
+    height: 80%;
+    width: 100%;
+    padding: 2px 1px 0 1px;
+}
+.note-preview-container img{
+    padding: 5px;
+}
+.note-preview-container .colorToggle{
+    height: 55%;
+    width: 60%;
+}
+.note-preview-container{
+    border-radius: 5px;
+    width: 95%;
+    margin: 9px 4px;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(43, 43, 43);
+}
+.search-buttons-container{
+    margin: 5px;
+    width: 90%;
+}
+
+li {
+    list-style: none;
+}
+
+.sort-btn {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+}
 }

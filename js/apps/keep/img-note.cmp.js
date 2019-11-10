@@ -4,9 +4,8 @@ export default {
     props: ['note'],
     template: `
     <div class="note-preview-container" :class="note.color" >
-        <div></div>
-        <div ref="inputEdit" @dblclick.stop="textToogleOpen">{{note.content}}</div>
-
+        <img :src="note.content" >
+                
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
         <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
@@ -38,19 +37,18 @@ export default {
             setTimeout(()=>{this.$refs.inputEdit.focus();},0) 
             this.textToggle = !this.textToggle
         },
-        editText(){
-            console.log('s');
-            
-        },
         onNoteChange(noteId, type, action, value){
             console.log(noteId, type ,action, value);
             this.$emit('noteChange', noteId, type, action, value)            
         },
     },
     computed:{
+        urlAdjust(){
+            var adress = this.note.content.split('=')
+            return `https://www.youtube.com/embed/${adress[1]}`
+        },
         limitedText(){
             if(this.editToggle.length > 100) console.log('100');
-            
         }
     },
     created(){
