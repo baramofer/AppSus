@@ -90,7 +90,7 @@ function deleteNote(noteId) {
     utilService.saveToStorage(STORAGE_KEY, gNotes)
 }
 
-function cloneNote(noteId, type){
+function cloneNote(noteId, type) {
     _findNote(noteId, type)
         .then(note => {
             gNotes.push(createNote(note.type, note.content, note.color))

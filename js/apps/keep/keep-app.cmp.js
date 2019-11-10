@@ -10,7 +10,6 @@ import url from './cmps/url.cmp.js'
 import imgNote from './cmps/img-note.cmp.js'
 import todo from './cmps/todo.cmp.js'
 
-
 export default {
   template: `
       <section v-if="notesToShow" class="notes-container" >
@@ -24,20 +23,12 @@ export default {
     return {
       notesList: null,
       filterBy: null,
-      // filterType: 'all'
     }
   },
   methods: {
-    // setFilter(filter, type="all") {
-    //   this.filterByTxt = filter    
-    //   this.filterType = type
-    // console.log('type:',this.filterType,',txt:', this.filterByTxt);setFilter(filter, type="all") {
     setFilter(filter) {
       this.filterBy = filter
     }
-    // this.filterBy = filter    
-    // console.log('filter:',this.filterBy);
-    // console.log('filter:',filter);
     ,
     addNote(type, value) {
       keepService.addNote(type, value)
@@ -45,7 +36,6 @@ export default {
     noteChange(noteId, type, action, value) {
       console.log('app:', noteId, type, action, value);
 
-      // switch case need
       if (action === 'delete') keepService.deleteNote(noteId)
       if (action === 'underLine') keepService.todoUnderLine(noteId, value)
       if (action === 'todoDelete') keepService.todoDelete(noteId, value)
@@ -60,42 +50,13 @@ export default {
   computed: {
     notesToShow() {
       return this.notesList
-      // if(!this.filterBy) return this.notesList;
-      // console.log(this.filterBy);
-      // return this.notesList.filter(note => {
-      //   note.content.includes(this.filterBy.content)
-
-      //   console.log('filter:', this.filterBy.content);
-
-      // })
-      // console.log('type:',this.filterType,',txt:', this.filterByTxt);
-      //   if (!this.filterByTxt && this.filterType==='all') {
-      //     return this.notesList;
-      // } else if(!this.filterByTxt){
-      //     return this.notesList.filter(note => note.type.includes(this.filterType))
-      // } 
-      // }
-      //   else{
-      //     console.log('filterByWord:',this.filterByTxt);
-      //     return this.notesList.filter(note => {
-      //       // note.type.includes(this.filterType) &&
-      //       console.log(note.content);
-
-      //       note.content.includes(this.filterByTxt) });
-      //     }
     },
-    selectNote() {
-      console.log('note selcted');
-
-    }
   },
   created() {
     keepService.getNotes()
       .then(notes => {
         this.notesList = notes
       })
-
-
   },
   components: {
     keepList,

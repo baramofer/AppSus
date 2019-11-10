@@ -1,5 +1,5 @@
 'use strcit';
-import { eventBus } from '../service/event-bus.service.js'
+import { eventBus } from '../services/event-bus.service.js'
 
 export default {
     template: `
@@ -33,5 +33,4 @@ export default {
             this.typeSelected = value
         }
     },
-
 }    

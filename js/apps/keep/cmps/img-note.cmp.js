@@ -5,7 +5,6 @@ export default {
     template: `
     <div class="note-preview-container" :class="note.color" >
         <img :src="note.content" >
-                
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
         <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
