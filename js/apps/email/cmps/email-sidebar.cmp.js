@@ -7,6 +7,7 @@ import eventBus, {
 export default {
   template: `
     <section class="mail-side flex">
+    <div class="flex column side center">
             <ul class="side-mail-ul">
               <li class="send-mail" @click="showSendMailModal"><i class="fas fa-plus"></i> Compose</li>
               <li :class="{picked:state.mails}"   class="flex flex-space-around" @click="sendPickedEmails(1)"><i class="fas fa-inbox"></i> Inbox</li>
@@ -27,7 +28,7 @@ export default {
                 <textarea v-model="newemail.body" placeholder="Enter your email here:"></textarea>
               </div>
               </transition>
-
+</div>
     </section>
 `,
   data() {

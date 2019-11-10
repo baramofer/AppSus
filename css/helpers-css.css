@@ -10,9 +10,9 @@
     flex-direction: column;
 }
 
-.row-reverse {
+/* .row-reverse {
     flex-direction: row-reverse;
-}
+} */
 
 .space-between {
     justify-content: space-between;
@@ -102,12 +102,28 @@
     background: rgba(192, 141, 2, 0.5);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    
+        /* padding: 10px 10px;
+        color: black;
+        cursor: pointer;
+        border: 1px grey solid;
+        border-radius: 5px;
+        padding: 19px;
+        align-items: center; */
+    
 }
 
 .emails-titles span.picked {
     background: rgb(3, 3, 240, 0.5);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+            /* padding: 10px 10px;
+        color: black;
+        cursor: pointer;
+        border: 1px grey solid;
+        border-radius: 5px;
+        padding: 19px;
+        align-items: center; */
 }
 .space-around{
     justify-content: space-around;
