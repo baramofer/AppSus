@@ -5,11 +5,6 @@
     margin-bottom: 40vh;
 }
 
-.mail-list {
-    display: flex;
-    justify-content: space-between;
-}
-
 .emails-titles {
     display: flex;
     justify-content: space-between;

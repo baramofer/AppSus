@@ -20,14 +20,14 @@ body{
     margin: 0;
     font-family: Poppins;
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
 }
 nav{
     font-size: 20px;
 }
 .main-container{
     text-align: center;
-    margin: 30px;
+    margin: 20px;
 }
 .note-filter-container input, button, select{
     padding: 5px;
@@ -179,9 +179,8 @@ nav{
 
 .email-main-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: end;
-    align-items: center;
 }
 
 .current-mail {
@@ -292,7 +291,7 @@ iframe{
     z-index: 1
 }
 
-@media (max-width: 760px) {
+@media (max-width: 760px) {    
 .nav-container{
     display: none;        
 }
@@ -358,6 +357,9 @@ iframe{
 .search-buttons-container{
     margin: 5px;
     width: 90%;
+}
+.email-main-container{
+    flex-direction: column-reverse;
 }
 
 li {

@@ -32,9 +32,15 @@ export default {
             textToggle: false
         }
     },
+<<<<<<< HEAD:js/apps/keep/cmps/text-box.cmp.js
     methods: {
         textToogleOpen() {
             setTimeout(() => { this.$refs.inputEdit.focus(); }, 0)
+=======
+    methods:{
+        textToogleOpen(){
+            setTimeout(()=>{this.$refs.inputEdit.focus();},0)
+>>>>>>> ec89f4e54a36b12b69f355dc46ce63372f589068:js/apps/keep/text-box.cmp.js
             this.textToggle = !this.textToggle
         },
         editText() {

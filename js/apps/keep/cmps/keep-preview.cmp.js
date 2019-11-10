@@ -4,7 +4,6 @@ export default {
     props: ['note'],
     template: `
     <div class="note-preview-container" :class="note.color" >
-        <div></div>
         <div ref="inputEdit" @dblclick.stop="textToogleOpen">{{note.content}}</div>
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>

@@ -7,11 +7,11 @@ export default {
         <iframe :src="urlAdjust"
          frameborder="0" allowfullscreen></iframe>
         <div class="toolBar">
-        <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
-        <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
-        <i class="fas fa-clone" @click="onNoteChange(note.id, note.type, 'clone')"></i>
-        <i class="fas fa-edit" @click.stop="textToogleOpen"></i>
-        <i class="fas fa-thumbtack" @click="onNoteChange(note.id, note.type, 'tack')"></i>
+            <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
+            <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
+            <i class="fas fa-clone" @click="onNoteChange(note.id, note.type, 'clone')"></i>
+            <i class="fas fa-edit" @click.stop="textToogleOpen"></i>
+            <i class="fas fa-thumbtack" @click="onNoteChange(note.id, note.type, 'tack')"></i>
         </div>
         <div class="colorToggle" v-show="textToggle">
             <input ref="inputEdit" type="text"  v-model="editToggle" @input="onNoteChange(note.id, note.type, 'edit', editToggle)" 

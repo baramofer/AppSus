@@ -45,7 +45,7 @@ export default {
     })
   },
   computed: {
-    filterdEmails: function () {
+    filterdEmails() {
       this.temp = this.emails;
       if (!this.filter || this.filter.isRead === 'All') {
         if (!this.filter) {

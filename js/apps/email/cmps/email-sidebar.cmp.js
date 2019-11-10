@@ -9,14 +9,13 @@ export default {
   props: [],
   template: `
     <section class="mail-side flex">
-        <div class="flex column side center  "> 
-            <ul>
+            <ul class="side-mail-ul">
               <li class="send-mail" @click="showSendMailModal"><i class="fas fa-plus"></i> Compose</li>
               <li :class="{picked:state.mails}"   class="flex flex-space-around" @click="sendPickedEmails(1)"><i class="fas fa-inbox"></i> Inbox</li>
               <li :class="{picked:state.sent}" class="flex flex-space-around" @click="sendPickedEmails(2)"><i class="fas fa-share"></i> Sent</li>
               <li :class="{picked:state.deleted}" class="flex flex-space-around" @click="sendPickedEmails(3)"><i class="fas fa-trash"></i> Trash</li>
               <li :class="{picked:state.starred}" class="flex flex-space-around"  @click="sendPickedEmails(4)"><i class="fas fa-star"></i> Starred</li>
-              </ul>
+            </ul>
               <transition name="slide-fade">
               <div class="send-modal" v-if="sendmodal">
                 <div class="flex space-between send-mail-head"><span>New Message</span> <span><i @click=showSendMailModal class="fas fa-times"></i></span> </div>
@@ -30,7 +29,7 @@ export default {
                 <textarea v-model="newemail.body" placeholder="Enter your email here:"></textarea>
               </div>
               </transition>
-        </div>
+
     </section>
 `,
   data() {

@@ -1,13 +1,20 @@
 .mail-filter input {
     background: rgb(255, 254, 254);
-    border: 2px black solid;
-    border-radius: 10px;
+    border: 1px grey solid;
+    border-radius: 3px;
     padding: 10px;
-    padding-right: 300px;
+    padding-right: 35%;
     color: black;
     outline: none;
     margin-left: 20px;
 }
+
+@media (max-width: 760px) {
+    .mail-filter input{
+        padding-right: 5%
+    } 
+}
+
 
 .mail-filter select {
     padding: 10px;
@@ -29,4 +36,5 @@
     background-position: 50% 27%;
     border-bottom: 2px black solid;
     padding: 10px 20px;
+    justify-content: flex-end;
 }
