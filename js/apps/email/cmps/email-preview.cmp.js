@@ -2,8 +2,8 @@ import storageService from '../services/storage.service.js';
 import eventBus, { EMAILS_DB } from '../../../../services/event-bus.js';
 
 export default {
-    props: ['email', 'idx', 'emails'],
-    template: `
+  props: ['email', 'idx', 'emails'],
+  template: `
           <transition name="appear">
     <li class="mail-prev flex align-center" :class="{ read: !email.isRead }" > 
         <span class="main-mail-spec flex align-center">             

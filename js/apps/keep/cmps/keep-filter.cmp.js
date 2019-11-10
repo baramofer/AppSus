@@ -15,8 +15,6 @@ export default {
     `,
     data() {
         return {
-            // filterTerm: '',
-            // filterType: '',
             filterBy: {
                 content: '',
                 type: 'all'
@@ -24,20 +22,14 @@ export default {
         }
     },
     methods: {
-        onFilter(){
+        onFilter() {
             this.$emit('filtered', this.filterBy)
             console.log(this.filterBy);
-            // this.filterBy.content=''
-            // this.filterBy.type=''
-            // this.$emit('filtered', this.filterTerm, this.filterType)
-            // this.filterTerm='';
-            // this.filterType='';
         }
     },
-    computed:{
+    computed: {
     },
     created() {
         this.$emit('filtered', this.filterBy)
-        // this.$emit('filtered', this.filterTerm, this.filterType)
     }
 }

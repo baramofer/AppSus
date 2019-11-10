@@ -1,5 +1,3 @@
-'use strcit';
-
 export default {
     props: ['note'],
     template: `
@@ -30,40 +28,32 @@ export default {
         </div>
     </div>
     `,
-    data(){
+    data() {
         return {
-            editToggle:null,
-            colorToggle:false,
-            textToggle:false,
+            editToggle: null,
+            colorToggle: false,
+            textToggle: false,
         }
     },
-    methods:{
-        textToogleOpen(){
-            setTimeout(()=>{this.$refs.inputEdit.focus();},0) 
+    methods: {
+        textToogleOpen() {
+            setTimeout(() => { this.$refs.inputEdit.focus(); }, 0)
             this.textToggle = !this.textToggle
         },
-        editText(){
-            console.log('s');
-            
-        },
-        onNoteChange(noteId, type, action, value){
-            console.log(noteId, type ,action, value);
-            this.$emit('noteChange', noteId, type, action, value)    
-            this.textToggle=false;        
+        onNoteChange(noteId, type, action, value) {
+            console.log(noteId, type, action, value);
+            this.$emit('noteChange', noteId, type, action, value)
+            this.textToggle = false;
         },
     },
-    computed:{
-        limitedText(){
-            if(this.editToggle.length > 100) console.log('100');
-            
+    computed: {
+        limitedText() {
+            if (this.editToggle.length > 100) console.log('100');
         }
     },
-    created(){
-        window.document.body.addEventListener("click",  ()=> {
-            this.colorToggle=false
+    created() {
+        window.document.body.addEventListener("click", () => {
+            this.colorToggle = false
         })
-        
-        // eventBus.$emit('show-msg', `review assign for "${this.book.title}" thank you!`);
-        
     }
 }

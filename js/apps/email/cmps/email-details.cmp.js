@@ -4,14 +4,12 @@ import sideNav from '../cmps/email-sidebar.cmp.js'
 import appHeader from '../../../../js/pages/app-header.cmp.js'
 
 export default {
-    props: [],
   template: `
   <!-- <header-cmp></header-cmp> -->
       <div class="email-main-container">
       <side-nav></side-nav>
     <section class="email-det">
     <div class="flex space-between send-mail-head"><span>{{subject}}</span><span><i @click="backToMails" class="fas fa-times"></i></span></div>
-    
     <div class="flex">
           <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
           <button class="replyBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i> Send</button>
@@ -64,16 +62,13 @@ export default {
       isStarred: false
     };
   },
-  mounted() {},
-  destroyed() {},
-  computed: {},
   methods: {
     sendmail() {
       if (!this.newEmail.sendto) {
         return false;
       }
 
-      mailService.updateDB(this.newEmail);
+      mailService.addMail(this.newEmail);
 
       this.$router.push('/mail');
     },
@@ -87,5 +82,5 @@ export default {
       this.$router.push('/mail');
     }
   },
-  components: {appHeader, sideNav, utilService }
+  components: { appHeader, sideNav, utilService }
 };

@@ -30,8 +30,4 @@ export default {
       this.mailsToReadShow = this.mailsToRead.length;
     });
   },
-  destroyed() {},
-  computed: {},
-  methods: {},
-  components: {}
 };

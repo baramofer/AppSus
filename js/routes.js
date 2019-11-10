@@ -2,7 +2,7 @@
 
 import homePage from './pages/home.cmp.js';
 import emailApp from '../js/apps/email/email-app.cmp.js';
-import missKeep from '../js/apps/keep/keep-app.cmp.js';
+import missKeep from '../js/apps/keep/pages/keep-app.cmp.js';
 import emailDetails from '../js/apps/email/cmps/email-details.cmp.js'
 
 const myRoutes = [
@@ -11,8 +11,8 @@ const myRoutes = [
         component: homePage
     },
     {
-      path:'/mail',
-      component: emailApp
+        path: '/mail',
+        component: emailApp
     },
     {
         path: '/keep',
@@ -25,6 +25,5 @@ const myRoutes = [
     //     component: bookApp
     // },
 ]
-const myRouter = new VueRouter({routes: myRoutes})
-
+const myRouter = new VueRouter({ routes: myRoutes })
 export default myRouter;

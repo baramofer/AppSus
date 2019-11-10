@@ -3,7 +3,6 @@ import emailList from './cmps/email-list.cmp.js'
 import sideNav from './cmps/email-sidebar.cmp.js'
 import emailDetails from './cmps/email-details.cmp.js'
 
-
 export default {
     template: `
         <section class="email-main-container">
@@ -16,13 +15,13 @@ export default {
         </div>
         </section>
     `,
-    data(){
-      return {
-          mails: null
-      }  
+    data() {
+        return {
+            mails: null
+        }
     },
-    created(){
+    created() {
         this.mails = mailService.getMails()
     },
-    components: { sideNav, emailList, emailDetails}
+    components: { sideNav, emailList, emailDetails }
 }

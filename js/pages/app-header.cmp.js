@@ -18,7 +18,4 @@ export default {
         </nav>
     </section>
     `,
-    methods:{
-
-    }
 }

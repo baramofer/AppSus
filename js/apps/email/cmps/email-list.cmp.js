@@ -6,8 +6,8 @@ import eventBus, { PICKED_EMAIL_STATE } from '../../../../services/event-bus.js'
 import emailFilter from './email-filter.cmp.js';
 
 export default {
-props: [],
-template: `
+  props: [],
+  template: `
 <section class="mail-list">
   <div class="email-list-container">
       <email-filter @filterapp="setFilter"></email-filter>
@@ -23,23 +23,21 @@ template: `
   :email="email" 
     :key="idx" class="flex space-between">
   </email-preview>
-
 </div>
-
 </section>
 `,
-data() {
-  return {
-    emails: null,
-    currentEmailsState: 1,
-    filter: null,
-    temp: [],
-    sort: {
-      subject: null,
-      date: null
-    }
-  };
-},
+  data() {
+    return {
+      emails: null,
+      currentEmailsState: 1,
+      filter: null,
+      temp: [],
+      sort: {
+        subject: null,
+        date: null
+      }
+    };
+  },
   created() {
     this.emails = mailservice.getMails();
     eventBus.$on(PICKED_EMAIL_STATE, state => {
@@ -47,7 +45,7 @@ data() {
     })
   },
   computed: {
-    filterdEmails: function() {
+    filterdEmails: function () {
       this.temp = this.emails;
       if (!this.filter || this.filter.isRead === 'All') {
         if (!this.filter) {
@@ -63,13 +61,13 @@ data() {
             email.isRead &&
             email.subject.toLowerCase().includes(this.filter.txt.toLowerCase())
         );
-      } else if (this.filter.isRead === 'UnRead') {
+      } else if (this.filter.isRead === 'Unread') {
         this.temp = this.emails.filter(
           email =>
             !email.isRead &&
             email.subject.toLowerCase().includes(this.filter.txt.toLowerCase())
         );
-      } else if (this.filter.isRead === 'star') {
+      } else if (this.filter.isRead === 'Star') {
         this.temp = this.emails.filter(
           email =>
             email.isStarred &&
@@ -122,6 +120,6 @@ data() {
     }
   },
   components: {
-    emailPreview,emailDetails,emailFilter,
+    emailPreview, emailDetails, emailFilter,
   }
 };

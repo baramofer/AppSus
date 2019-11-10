@@ -1,7 +1,6 @@
 import countersCmp from './counter.cmp.js';
 
 export default {
-    props: [],
   template: `
     <section class="mail-filter flex align-center row-reverse">
         <!-- <div class="flex align-center row-reverse"> -->
@@ -23,8 +22,8 @@ export default {
       }
     };
   },
-  created() {},
-  destroyed() {},
+  created() { },
+  destroyed() { },
   computed: {},
   methods: {
     emitFilter(event) {

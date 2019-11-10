@@ -1,4 +1,3 @@
-import utilService from '../services/util.service.js';
 import storageService from '../services/storage.service.js';
 
 const MAIL_KEY = 'emailsDB';
@@ -6,7 +5,7 @@ const MAIL_KEY = 'emailsDB';
 export default {
   getMails,
   getById,
-  updateDB,
+  addMail,
   saveEmailDB
 };
 
@@ -280,11 +279,11 @@ function getById(emailId) {
   return email;
 }
 
-function updateDB(newEmail) {
-    emailsDB.unshift(newEmail);
-    storageService.store(MAIL_KEY, emailsDB);
-  }
-  
-  function saveEmailDB() {
-    storageService.store(MAIL_KEY, emailsDB);
-  }
+function addMail(newEmail) {
+  emailsDB.unshift(newEmail);
+  storageService.store(MAIL_KEY, emailsDB);
+}
+
+function saveEmailDB() {
+  storageService.store(MAIL_KEY, emailsDB);
+}

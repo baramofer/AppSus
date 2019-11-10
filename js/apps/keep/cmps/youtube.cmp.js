@@ -4,10 +4,8 @@ export default {
     props: ['note'],
     template: `
     <div class="note-preview-container" :class="note.color" >
-        <div></div>
-        <div ref="inputEdit" @dblclick.stop="textToogleOpen"><a :href="urlValid" target="_blank">
-        {{note.content}}</a></div>
-
+        <iframe :src="urlAdjust"
+         frameborder="0" allowfullscreen></iframe>
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
         <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
@@ -27,43 +25,35 @@ export default {
         </div>
     </div>
     `,
-    data(){
+    data() {
         return {
-            colorToggle:false,
-            editToggle:this.note.content,
-            textToggle:false
+            colorToggle: false,
+            editToggle: this.note.content,
+            textToggle: false
         }
     },
-    methods:{
-        textToogleOpen(){
-            setTimeout(()=>{this.$refs.inputEdit.focus();},0) 
+    methods: {
+        textToogleOpen() {
+            setTimeout(() => { this.$refs.inputEdit.focus(); }, 0)
             this.textToggle = !this.textToggle
         },
-        editText(){
-            console.log('s');
-            
-        },
-        onNoteChange(noteId, type, action, value){
-            console.log(noteId, type ,action, value);
-            this.$emit('noteChange', noteId, type, action, value)            
+        onNoteChange(noteId, type, action, value) {
+            console.log(noteId, type, action, value);
+            this.$emit('noteChange', noteId, type, action, value)
         },
     },
-    computed:{
-        urlValid(){
-            if(!this.note.content.includes('http://')) return this.note.content='http://'+this.note.content;
-            return this.note.content
+    computed: {
+        urlAdjust() {
+            var adress = this.note.content.split('=')
+            return `https://www.youtube.com/embed/${adress[1]}`
         },
-        limitedText(){
-            if(this.editToggle.length > 100) console.log('100');
-            
+        limitedText() {
+            if (this.editToggle.length > 100) console.log('100');
         }
     },
-    created(){
-        window.document.body.addEventListener("click",  ()=> {
-            this.colorToggle=false
+    created() {
+        window.document.body.addEventListener("click", () => {
+            this.colorToggle = false
         })
-        
-        // eventBus.$emit('show-msg', `review assign for "${this.book.title}" thank you!`);
-        
     }
 }

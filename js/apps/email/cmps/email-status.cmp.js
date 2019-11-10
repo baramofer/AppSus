@@ -9,23 +9,12 @@ export default {
   props: ['totalCount', 'readCount'],
   data() {
     return {
-
     }
   },
   computed: {
     progressPercent() {
       const percent = (this.readCount / this.totalCount * 100).toFixed();
-
-      //prevent NaN
       return this.totalCount !== 0 ? percent : 0;
     }
   },
-
-  created() {
-
-  },
-  components: {
-  }
-
-
 }

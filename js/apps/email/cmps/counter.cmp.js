@@ -2,7 +2,7 @@ import emailCount from './email-count.cmp.js';
 // import noteCount from '../apps/miss-keep/cmp/note-count.cmp.js';
 
 export default {
-    props: [],
+  props: [],
   template: `
     <section class="counters"> 
     <div class="flex align-center"> 
@@ -19,9 +19,5 @@ export default {
   data() {
     return {};
   },
-  created() {},
-  destroyed() {},
-  computed: {},
-  methods: {},
   components: { emailCount, /*noteCount*/ }
 };

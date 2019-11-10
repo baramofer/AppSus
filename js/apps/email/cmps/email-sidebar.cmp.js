@@ -2,7 +2,7 @@ import utilService from '../services/util.service.js';
 import mailService from '../services/mail.service.js';
 import eventBus, {
   PICKED_EMAIL_STATE,
-//   NOTE_EMAIL
+  //   NOTE_EMAIL
 } from '../../../../services/event-bus.js';
 
 export default {
@@ -57,8 +57,6 @@ export default {
       note: null
     };
   },
-  created() {},
-  destroyed() {},
   computed: {},
   methods: {
     showSendMailModal() {
@@ -68,7 +66,7 @@ export default {
       if (!this.newemail.sendto) {
         return false;
       }
-      mailService.updateDB(this.newemail);
+      mailService.addMail(this.newemail);
       this.newemail = {
         id: '',
         body: '',
@@ -86,7 +84,7 @@ export default {
     sendPickedEmails(emailsType) {
       this.pickedEmails = emailsType;
       eventBus.$emit(PICKED_EMAIL_STATE, this.pickedEmails);
-      this.state = { mails: false, sent: false, deleted: false, starred: false};
+      this.state = { mails: false, sent: false, deleted: false, starred: false };
       if (emailsType === 1) this.state.mails = true;
       if (emailsType === 2) this.state.sent = true;
       if (emailsType === 3) this.state.deleted = true;
@@ -94,6 +92,4 @@ export default {
       this.$router.push('/mail');
     }
   },
-  mounted() {},
-  components: {}
 };

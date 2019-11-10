@@ -3,15 +3,15 @@
 import theRouter from './routes.js';
 import appHeader from './pages/app-header.cmp.js';
 import appFooter from './pages/app-footer.cmp.js';
-import userMsg from './apps/keep/user-msg.cmp.js';
+import userMsg from './apps/keep/cmps/user-msg.cmp.js';
 
-Vue.filter('snippet',function(value){
-    return value.slice(0,50);
-  });
+Vue.filter('snippet', function (value) {
+    return value.slice(0, 50);
+});
 
 new Vue({
-    router: theRouter, 
-    el:'#appsus-app',
+    router: theRouter,
+    el: '#appsus-app',
     template: `
         <section class="full-screen">
             <app-header></app-header>
