@@ -200,7 +200,8 @@ border-radius: 5px;
 
 .burger{
     font-size: 40px; 
-    color: rgba(255, 127, 80, 0.815);     
+    color: rgba(255, 127, 80, 0.815);  
+    display: none;   
 }
 
 .burger-menu{
@@ -323,6 +324,9 @@ iframe{
 }
 
 @media (max-width: 760px) {   
+.burger{
+    display: block;
+}
 .li-todo-internal-container{
     word-wrap: break-word;
     width: 100%;

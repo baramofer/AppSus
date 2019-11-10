@@ -9,8 +9,6 @@ export default {
           <keep-filter @filtered="setFilter"></keep-filter>
           <keep-add @noteAdd="addNote"></keep-add>
           <keep-list v-if="notesToShow" @noteChange="noteChange" :notes="notesToShow"></keep-list>
-          <keep-list v-if="notesToShow" @noteChange="noteChange" :notes="notesToShow"></keep-list>
-          
       </section>
     `,
   data() {

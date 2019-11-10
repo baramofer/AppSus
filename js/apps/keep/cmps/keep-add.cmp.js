@@ -1,5 +1,5 @@
 'use strict';
-import { eventBus } from '../service/event-bus.service.js'
+import { eventBus } from '../services/event-bus.service.js'
 
 export default {
     template: `
