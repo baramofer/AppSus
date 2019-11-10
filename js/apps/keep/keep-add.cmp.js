@@ -1,4 +1,5 @@
 'use strcit';
+import {eventBus} from './service/event-bus.service.js'
 
 export default {
     template: `
@@ -24,10 +25,13 @@ export default {
     methods:{
         addNote(){
             this.$emit('noteAdd', this.typeSelected, this.content) 
-            this.content=null           
+            this.content=null     
+            eventBus.$emit('show-msg', `${this.typeSelected}
+                                         has added succesfuly`);      
         },
         isClicked(value){
            this.typeSelected = value
            }   
-        }     
+        },
+             
 }    
