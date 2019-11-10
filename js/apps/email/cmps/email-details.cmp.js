@@ -16,8 +16,8 @@ export default {
           <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
           <button class="replyBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i> Send</button>
         <div class="flex column inputs-container">
-          <div class="flex"><button> Subject:</button><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>  </div> 
-          <div class="flex"><button @click="showMailsAddress=!showMailsAddress">Send To:</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
+          <div class="flex"><p class="subject">Subject:</p><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>  </div> 
+          <div class="flex"><button class="saved-contatcs-btn" @click="showMailsAddress=!showMailsAddress">Open Saved Contacts</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
           <transition name="appear">
                 <div class="show-mails-address" v-if='showMailsAddress'>
               <h3>Saved Contacts:</h3>  

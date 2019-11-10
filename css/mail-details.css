@@ -24,17 +24,27 @@
 }
 
 .email-det .inputs-container input {
-    width: 60vw;
+width: 70%;}
+
+.email-det button.replayBtn, .side button.replayBtn {
+    height: inherit;
+    background: rgb(201, 147, 97);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    width: 200px;
+    border: 1.5px black solid;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.email-det button.replyBtn, .side button.replyBtn {
-    height: inherit;
-    background: rgb(197, 124, 56);
-    font-weight: bold;
-    font-size: 1.5rem;
-    width: 200px;
-    border: 2px black solid;
-    cursor: pointer;
+.replyBtn {
+    color: black;
+    border: 1px solid;
+}
+
+button.replayBtn:hover {
+    border: 3px black solid;
 }
 
 .email-det textarea {
@@ -46,11 +56,14 @@
 }
 
 .email-det button {
-    height: 30px;
     width: 100px;
     font-weight: bold;
     font-size: 1.1rem;
     position: relative;
+}
+
+.saved-contatcs-btn {
+color: rgb(99, 99, 145);
 }
 
 .show-mails-address {
@@ -64,21 +77,24 @@
 }
 
 .sent-from {
-    /* padding: 10px; */
     font-weight: bold;
     border: 1px rgb(196, 196, 196) solid;
-    /* width: 74vw; */
     width: 100%;
 }
 
 .curr-mail{
-    /* width: 70vw; */
     width: 100%;
 
 }
 
 .fa-times {
     cursor: pointer;
+}
+
+.fa-times:hover{
+    transform: scale(1);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .cursor-pointer {
