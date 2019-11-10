@@ -337,6 +337,10 @@ iframe{
 }
 .todo-container{
     margin: 10px;
+    text-align: left;
+}
+.todo-container i{
+    font-size: 10px;
 }
 .todo-container .line-through{
     text-decoration: line-through;

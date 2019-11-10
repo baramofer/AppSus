@@ -26,12 +26,13 @@ function createNotes(){
     gNotes = utilService.loadFromStorage(STORAGE_KEY);
     if (!gNotes){
         gNotes = [
-            createNote('todo',[{line: 'tomato', underLine: true},{line: 'false', underLine: false}], 'green'),
-            createNote('todo',[{line: 'tomato', underLine: true},{line: 'false', underLine: false}], 'green'),
-            createNote('text-box','this is a txt', 'red'),
+            createNote('todo',[{line: 'tomato', underLine: false},
+            {line: 'Cucamber', underLine: false},
+            {line: 'Melon', underLine: true}],),
+            createNote('text-box','Im a txt box!', 'red'),
             createNote('youtube','https://www.youtube.com/watch?v=_GXd42_rjME', 'yellow'),
-            createNote('url','http://google.co.il', 'red'),
-            createNote('imgNote','https://www.airc.ie/wp-content/uploads/horse-web.jpg', 'green'),
+            createNote('url','http://walla.co.il', 'red'),
+            createNote('imgNote','https://www.airc.ie/wp-content/uploads/horse-web.jpg', 'blue'),
         ] 
         utilService.saveToStorage(STORAGE_KEY, gNotes)
     }
@@ -105,9 +106,13 @@ function editNote(noteId, value){
 )}
 
 function tackNote(noteId){
-    // _findNote(noteId)
-    //     .then(note => gNotes.splice(note, 1)
-// )
+    _findNote(noteId)
+        .then(note =>{
+            var noteIdx = gNotes.findIndex(noteIdx => noteId===noteIdx.id)
+            gNotes.splice(noteIdx, 1)
+            gNotes.splice(0, 0, note)
+    }
+)
 }
 
 function changeColorNote(noteId, color){
