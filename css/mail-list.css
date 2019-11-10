@@ -17,22 +17,26 @@
     padding: 20px 0;
     border-bottom: 0.5px solid rgb(128, 128, 128);
     padding-left: 10px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     list-style-type: none;
 }
 
 .wd {
     color: rgb(255, 229, 111);
 }
+.sort-buttons{
+    width: 337px;
+}
 
 .emails-titles span {
     padding: 3px 6%;
-    font-weight: bold;
     text-transform: capitalize;
     font-size: 1.1rem;
-    background: rgb(155, 154, 156);
-    border-radius: 10px;
-    border: 2px black solid;
+    background: rgb(231, 231, 231);
+    border-radius: 5px;
+    border: 1px grey solid;
+    text-align: center;
+    margin: 2px;
 }
 
 .emails-titles span:not(:first-child) {

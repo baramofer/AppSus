@@ -12,16 +12,17 @@ export default {
   <div class="email-list-container">
       <email-filter @filterapp="setFilter"></email-filter>
       <li class="flex space-between emails-titles"> 
-        <span> Sent From </span> 
-        <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
-        <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
-      </li>
+        <div class="sort-buttons">
+          <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
+          <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
+        </div>
+        </li>
   <email-preview 
   :idx="idx" 
   :emails="filterdEmails"
   v-for= "(email,idx) in filterdEmails" 
   :email="email" 
-    :key="idx" class="flex space-between">
+    :key="idx" class="flex space-around">
   </email-preview>
 </div>
 </section>

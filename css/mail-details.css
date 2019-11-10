@@ -8,6 +8,7 @@
 .emails-titles {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .email-det div.send-mail-head {
