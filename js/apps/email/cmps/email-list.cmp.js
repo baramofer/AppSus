@@ -7,14 +7,15 @@ import emailFilter from './email-filter.cmp.js';
 
 export default {
 props: [],
-template: `<section class="mail-list">
-  <ul>
+template: `
+<section class="mail-list">
+  <div class="email-list-container">
       <email-filter @filterapp="setFilter"></email-filter>
-    <li class="flex space-between emails-titles"> 
-      <span> Sent From </span> 
-      <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
-      <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
-    </li>
+      <li class="flex space-between emails-titles"> 
+        <span> Sent From </span> 
+        <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
+        <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
+      </li>
   <email-preview 
   :idx="idx" 
   :emails="filterdEmails"
@@ -23,7 +24,7 @@ template: `<section class="mail-list">
     :key="idx" class="flex space-between">
   </email-preview>
 
-</ul>
+</div>
 
 </section>
 `,

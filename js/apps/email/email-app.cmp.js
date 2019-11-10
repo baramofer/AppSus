@@ -7,10 +7,13 @@ import emailDetails from './cmps/email-details.cmp.js'
 export default {
     template: `
         <section class="email-main-container">
-            <side-nav></side-nav>
-                <div class="emails-container">
-                    <email-list></email-list>
-                </div>
+            <email-list></email-list>
+                <div class="flex column side center">
+            <side-nav>
+            </side-nav>
+            <div class="emails-container">
+            </div>
+        </div>
         </section>
     `,
     data(){
@@ -21,5 +24,5 @@ export default {
     created(){
         this.mails = mailService.getMails()
     },
-    components: { sideNav, emailList, emailDetails }
+    components: { sideNav, emailList, emailDetails}
 }

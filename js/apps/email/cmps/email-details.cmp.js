@@ -20,7 +20,7 @@ export default {
           <div class="flex"><button @click="showMailsAddress=!showMailsAddress">Send To:</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
           <transition name="appear">
                 <div class="show-mails-address" v-if='showMailsAddress'>
-              <h3>Regular contacts:</h3>  
+              <h3>Saved Contacts:</h3>  
               <ol>
                   <li>snir@gmail.com</li>
                   <li>ofer@gmail.com</li>
