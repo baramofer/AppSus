@@ -1,10 +1,10 @@
 @import "mail-details.css";
-@import "css/helpers-css.css";
-@import "css/mail-filter.css";
-@import "css/mail-prev.css";
-@import "css/mail-list.css";
-@import "css/mail-side.css";
-@import "css/mail-status.css";
+@import "helpers-css.css";
+@import "mail-filter.css";
+@import "mail-prev.css";
+@import "mail-list.css";
+@import "mail-side.css";
+@import "mail-status.css";
 
 *{
     box-sizing: border-box;
