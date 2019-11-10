@@ -4,7 +4,7 @@ export default {
     <div class="note-preview-container" :class="note.color" >
         <div></div>
             <ul class="todo-container" style="user-select: none">
-                <li style="word-wrap: break-word; width: 50%;" 
+                <li class="li-todo-internal-container" 
                 @click="onNoteChange(note.id, note.type, 'underLine', todo.line)"
                 v-for="todo in note.content" :class="{'line-through': todo.underLine}">
                 <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'todoDelete', todo.line)"></i> {{todo.line}}
