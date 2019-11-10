@@ -6,16 +6,17 @@ import appHeader from '../../../../js/pages/app-header.cmp.js'
 export default {
   template: `
   <!-- <header-cmp></header-cmp> -->
-      <div class="email-main-container">
+      <div class="email-det-container">
       <side-nav></side-nav>
     <section class="email-det">
     <div class="flex space-between send-mail-head"><span>{{subject}}</span><span><i @click="backToMails" class="fas fa-times"></i></span></div>
-    <div class="flex">
-          <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
-          <button class="replyBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i> Send</button>
+    <div class="flex inputs-container">
+    <button class="replyBtn" v-if="!isReply" @click="replymail"><i class="fas fa-reply"></i> Reply</button>
+    <button class="replyBtn" v-if="isReply" @click="sendmail"><i class="fas fa-share"></i> Send</button>
+    <div class="flex inputs-container"><button class="saved-contatcs-btn" @click="showMailsAddress=!showMailsAddress">Saved Contacts</button>
         <div class="flex column inputs-container">
-          <div class="flex"><p class="subject">Subject:</p><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>  </div> 
-          <div class="flex"><button class="saved-contatcs-btn" @click="showMailsAddress=!showMailsAddress">Open Saved Contacts</button><input v-model="newEmail.sendto" type="text" placeholder="Enter email to send to"/> 
+          <div class="flex inputs-container"><p class="subject">Subject:</p><input v-model="newEmail.subject" type="text" placeholder="Enter mail Subject"/>
+          <p class="subject">Mail Address: </p> <input v-model="newEmail.sendto" type="text" placeholder="Enter email address"/>   </div> 
           <transition name="appear">
                 <div class="show-mails-address" v-if='showMailsAddress'>
               <h3>Saved Contacts:</h3>  
@@ -30,7 +31,7 @@ export default {
       </div>
       <div class="curr-mail">
       <div class="sent-from"> Sent From: {{email.name}}</div>
-                <textarea name="" id="" v-model="newEmail.body"></textarea>
+                <textarea name="" cols="40" rows="7" v-model="newEmail.body"></textarea>
                 </div>
                  </section>
               </div>

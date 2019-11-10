@@ -1,8 +1,9 @@
-.mail-list {
+.mail-list{
     width: 100%;
     height: 75vh;
     overflow-y: scroll;
     border: 2px white solid;
+    border-radius: 4px;
     border: 1px black solid;
     display: flex;
     justify-content: space-between;
@@ -24,6 +25,7 @@
 .wd {
     color: rgb(255, 229, 111);
 }
+
 .sort-buttons{
     width: 337px;
 }
@@ -63,7 +65,9 @@ li.emails-titles {
 }
 
 .subject {
-width: 30%;
+    /* font-size: 17px; */
+width: 20%;
+text-decoration: underline;
 }
 
 .main-mail-spec {
@@ -87,13 +91,12 @@ width: 30%;
 }
 
 .mail-list li.mail-prev.read {
-    /* background: rgb(102, 95, 95); */
+    background: white;
     font-weight: bold;
 }
 .mail-list li.mail-prev {
     position: relative;
 }
-
 
 .main-email-container {
     height: 84vh;

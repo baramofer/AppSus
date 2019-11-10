@@ -1,8 +1,34 @@
 
+.email-det-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
 .email-det {
-    height: 30vh;
-    width: 65%;
-    margin-bottom: 40vh;
+    width: 100%;
+    height: 75vh;
+    overflow-y: scroll;
+    border: 2px white solid;
+    border: 1px black solid;
+    justify-content: space-between;
+}
+
+.side ul li {
+    padding: 10px 10px;
+    color: black;
+    cursor: pointer;
+    border: 1px grey solid;
+    border-radius: 5px;
+    padding: 19px;
+    align-items: center;
+}
+
+.side ul li:hover {
+    transform: scale(0.97);
+    border: 1px solid rgba(137, 137, 223, 0.5);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .emails-titles {
@@ -13,33 +39,41 @@
 
 .email-det div.send-mail-head {
     width: 100%;
-    background: rgb(231, 138, 84);
-    color: white;
+    background: rgb(218, 218, 218);
+    color:  rgb(231, 138, 84);
+    border-bottom: 1px solid black;
     font-size: 1.5rem;
     justify-content: space-between;
 }
 
+.inputs-container{
+    align-items: center;
+justify-content: space-around;
+}
+
+.email-det input[type=text] {
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 4px;
+    padding: 2px;
+  }
+
 .email-det .inputs-container input {
+    height: 50px;
 width: 70%;}
 
-.email-det button.replayBtn, .side button.replayBtn {
+.email-det button.replyBtn, .side button.replyBtn {
     height: inherit;
     background: rgb(201, 147, 97);
     font-weight: bold;
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
-    width: 200px;
+    width: 150px;
     border: 1.5px black solid;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.replyBtn {
-    color: black;
-    border: 1px solid;
-}
-
-button.replayBtn:hover {
+button.replayBtn:hover, button.replyBtn:hover {
     border: 3px black solid;
 }
 
@@ -53,13 +87,15 @@ button.replayBtn:hover {
 
 .email-det button {
     width: 100px;
+    height: 50px;
     font-weight: bold;
-    font-size: 1.1rem;
-    position: relative;
 }
 
 .saved-contatcs-btn {
+    cursor: pointer;
+    border: double;;
 color: rgb(99, 99, 145);
+border-color: rgb(37, 30, 143);
 }
 
 .show-mails-address {
@@ -67,7 +103,7 @@ color: rgb(99, 99, 145);
     top: 20.5%;
     border: 1px black solid;
     z-index: 100;
-    background: white;
+    background: rgb(192, 169, 169);
     padding: 25px;
     line-height: 1.5
 }
@@ -76,11 +112,11 @@ color: rgb(99, 99, 145);
     font-weight: bold;
     border: 1px rgb(196, 196, 196) solid;
     width: 100%;
+    background-color: rgb(165, 155, 155);
 }
 
 .curr-mail{
     width: 100%;
-
 }
 
 .fa-times {
