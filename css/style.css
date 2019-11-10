@@ -29,22 +29,35 @@ nav{
     text-align: center;
     margin: 30px;
 }
+.note-filter-container input, button, select{
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.473);
+    color: grey;
+    font-family: poppins;
+    margin: 3px;
+    background-color: rgba(255, 255, 255, 0.212);
+}
+.note-filter-container{
+    margin: 3px;
+    display:flex;
+    align-items: center;
+    top:12%;
+    background-color: rgba(255, 255, 255, 0.397);
+    justify-content: center;
+}
 
 .header-container{
-    /* position: relative; */
     display: flex;
-    position: sticky;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.267);
+    background-color: rgba(255, 255, 255, 0.467);
     padding: 0 20px;
     box-shadow: #222222;
     -webkit-box-shadow: 0px -9px 10px 10px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px -9px 10px 10px rgba(0,0,0,0.3);
     box-shadow: 0px -9px 10px 10px rgba(0,0,0,0.3);
     z-index: 10000;
-    left: 0;
-    right: 0;
+    top: 0;
     
 }
 .header-container .logo{
@@ -238,7 +251,22 @@ iframe{
 .search-buttons-container .unclicked{
     opacity: 0.7;
 }
-
+.todo-container ul{
+    padding: 0;
+}
+.todo-container li{
+    list-style: none;
+}
+.todo-container{
+    margin: 10px;
+    text-align: left;
+}
+.todo-container i{
+    font-size: 10px;
+}
+.todo-container .line-through{
+    text-decoration: line-through;
+}
 
 @media (max-width: 760px) {
 .nav-container{

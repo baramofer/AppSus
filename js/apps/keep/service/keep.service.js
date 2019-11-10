@@ -10,11 +10,13 @@ export default {
     tackNote,
     editNote,
     cloneNote,
-    addNote
+    addNote,
+    todoUnderLine,
+    todoDelete,
+    addTodo,
 }
 
 const STORAGE_KEY = 'gNotes';
-var gNextId = 100;
 
 var gNotes = createNotes()
 window.gNotes = gNotes;
@@ -24,10 +26,13 @@ function createNotes(){
     gNotes = utilService.loadFromStorage(STORAGE_KEY);
     if (!gNotes){
         gNotes = [
-            createNote('text-box','this is a txt', 'red'),
+            createNote('todo',[{line: 'tomato', underLine: false},
+            {line: 'Cucamber', underLine: false},
+            {line: 'Melon', underLine: true}],),
+            createNote('text-box','Im a txt box!', 'red'),
             createNote('youtube','https://www.youtube.com/watch?v=_GXd42_rjME', 'yellow'),
-            createNote('url','http://google.co.il', 'red'),
-            createNote('imgNote','https://www.airc.ie/wp-content/uploads/horse-web.jpg', 'green'),
+            createNote('url','http://walla.co.il', 'red'),
+            createNote('imgNote','https://www.airc.ie/wp-content/uploads/horse-web.jpg', 'blue'),
         ] 
         utilService.saveToStorage(STORAGE_KEY, gNotes)
     }
@@ -38,12 +43,13 @@ function getNotes(){
     return Promise.resolve(gNotes)
 }
 
-function createNote(type, content, color='red'){
+function createNote(type, content, color='red', tack=false){
     return {
         type,
         content,
         color,
-        id: utilService.makeId()
+        id: utilService.makeId(),
+        tack
     }
 }
 
@@ -51,13 +57,37 @@ function _findNote(noteId) {
     return Promise.resolve(gNotes.find((note)=>note.id===noteId))
 }
 
-function deleteNote(noteId, type){
-    _findNote(noteId, type)
+function addTodo(noteId, value){
+    _findNote(noteId)
         .then(note => {
-            gNotes.splice(note, 1)
+            note.content.push({line: value , underLine: false})
             utilService.saveToStorage(STORAGE_KEY, gNotes)
         }
 )}
+
+function todoUnderLine(noteId, value){
+    _findNote(noteId)
+        .then(note => {
+            var todoLine = note.content.find(todo => todo.line === value)
+            todoLine.underLine = !todoLine.underLine
+            utilService.saveToStorage(STORAGE_KEY, gNotes)
+        }
+)}
+
+function todoDelete(noteId, value){
+    _findNote(noteId)
+        .then(note => {
+            var line = note.content.findIndex(todo => todo.line === value)
+            note.content.splice(line, 1)
+            utilService.saveToStorage(STORAGE_KEY, gNotes)
+        }
+)}
+
+function deleteNote(noteId){
+    var noteIdx = gNotes.findIndex(noteIdx => noteId===noteIdx.id)
+    gNotes.splice(noteIdx, 1)
+    utilService.saveToStorage(STORAGE_KEY, gNotes)
+}
 
 function cloneNote(noteId, type){
     _findNote(noteId, type)
@@ -67,22 +97,26 @@ function cloneNote(noteId, type){
         }
 )}
 
-function editNote(noteId, type, value){
-    _findNote(noteId, type)
+function editNote(noteId, value){
+    _findNote(noteId)
     .then(note => {
         note.content = value;
         utilService.saveToStorage(STORAGE_KEY, gNotes)
     }
 )}
 
-function tackNote(noteId, type){
-    // _findNote(noteId)
-    //     .then(note => gNotes.splice(note, 1)
-// )
+function tackNote(noteId){
+    _findNote(noteId)
+        .then(note =>{
+            var noteIdx = gNotes.findIndex(noteIdx => noteId===noteIdx.id)
+            gNotes.splice(noteIdx, 1)
+            gNotes.splice(0, 0, note)
+    }
+)
 }
 
-function changeColorNote(noteId, type, color){
-    _findNote(noteId, type)
+function changeColorNote(noteId, color){
+    _findNote(noteId)
     .then(note => {
         note.color = color;
         utilService.saveToStorage(STORAGE_KEY, gNotes)
@@ -90,6 +124,14 @@ function changeColorNote(noteId, type, color){
 )}
 
 function addNote(type, value) {
+    if(type==='todo'){
+        var todos = value.split(',')
+        var lines = [];
+        todos.forEach(todo => {
+            lines.push({line: todo, underLine: false})
+        })
+        value = lines;
+    }
     gNotes.unshift(createNote(type, value))
     utilService.saveToStorage(STORAGE_KEY, gNotes)
 }

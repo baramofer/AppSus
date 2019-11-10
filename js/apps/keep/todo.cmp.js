@@ -5,19 +5,20 @@ export default {
     template: `
     <div class="note-preview-container" :class="note.color" >
         <div></div>
-        <div ref="inputEdit" @dblclick.stop="textToogleOpen"><a :href="note.content" target="_blank">
-        {{note.content}}</a></div>
-
+            <ul class="todo-container" style="user-select: none">
+                <li @click="onNoteChange(note.id, note.type, 'underLine', todo.line)" v-for="todo in note.content" :class="{'line-through': todo.underLine}">
+                <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'todoDelete', todo.line)"></i> {{todo.line}}
+                </li>
+                <i class="fas fa-plus" @click.stop="textToogleOpen"></i>
+            </ul>
         <div class="toolBar">
         <i class="fas fa-palette" @click.stop="colorToggle = !colorToggle"></i>
         <i class="fas fa-trash-alt" @click="onNoteChange(note.id, note.type, 'delete')"></i>
-        <i class="fas fa-clone" @click="onNoteChange(note.id, note.type, 'clone')"></i>
-        <i class="fas fa-edit" @click.stop="textToogleOpen"></i>
+        <i class="fas fa-clone" @click="onNoteChange(note.id, note.type, 'clone', note.content)"></i>
         <i class="fas fa-thumbtack" @click="onNoteChange(note.id, note.type, 'tack')"></i>
         </div>
         <div class="colorToggle" v-show="textToggle">
-            <input ref="inputEdit" type="text"  v-model="editToggle" @input="onNoteChange(note.id, note.type, 'edit', editToggle)" 
-            @blur="textToggle=false">
+            <input ref="inputEdit" type="text" v-model="editToggle" @keyup.enter="onNoteChange(note.id, note.type, 'addTodo', editToggle)" >
         </div>
         <div class="colorToggle" v-if="colorToggle">
             <img @click="onNoteChange(note.id, note.type, 'changeColor', 'red')" src="./img/c_red.png" alt=""/>
@@ -29,9 +30,9 @@ export default {
     `,
     data(){
         return {
+            editToggle:null,
             colorToggle:false,
-            editToggle:this.note.content,
-            textToggle:false
+            textToggle:false,
         }
     },
     methods:{
@@ -45,7 +46,8 @@ export default {
         },
         onNoteChange(noteId, type, action, value){
             console.log(noteId, type ,action, value);
-            this.$emit('noteChange', noteId, type, action, value)            
+            this.$emit('noteChange', noteId, type, action, value)    
+            this.textToggle=false;        
         },
     },
     computed:{

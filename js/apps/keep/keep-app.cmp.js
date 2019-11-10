@@ -24,31 +24,65 @@ export default {
       return {
         notesList: null,
         filterBy: null,
-        // selectedBook: null,
+        // filterType: 'all'
       }
     },
     methods:{
-      setFilter(filter) {
-        this.filterBy = filter         
+      // setFilter(filter, type="all") {
+      //   this.filterByTxt = filter    
+      //   this.filterType = type
+        // console.log('type:',this.filterType,',txt:', this.filterByTxt);setFilter(filter, type="all") {
+        setFilter(filter){
+          this.filterBy=filter
+        // this.filterBy = filter    
+        // console.log('filter:',this.filterBy);
+        // console.log('filter:',filter);
     },
     addNote(type, value){            
       keepService.addNote(type, value)
     },
     noteChange(noteId, type, action, value){
+      console.log('app:' ,noteId, type, action, value);
+      
       // switch case need
-      if(action ==='delete') keepService.deleteNote(noteId, type)
-      if(action ==='clone') keepService.cloneNote(noteId, type)
-      if(action ==='edit') keepService.editNote(noteId, type, value)
-      if(action ==='tack') keepService.tackNote(noteId, type)
-      if(action ==='changeColor') keepService.changeColorNote(noteId, type, value)        
+      if(action ==='delete') keepService.deleteNote(noteId)
+      if(action ==='underLine') keepService.todoUnderLine(noteId, value)
+      if(action ==='todoDelete') keepService.todoDelete(noteId, value)
+      if(action ==='addTodo') keepService.addTodo(noteId, value)
+      if(action ==='editTodo') keepService.editTodo(noteId, value)
+      if(action ==='clone') keepService.cloneNote(noteId, type, value)
+      if(action ==='edit') keepService.editNote(noteId, value)
+      if(action ==='tack') keepService.tackNote(noteId)
+      if(action ==='changeColor') keepService.changeColorNote(noteId, value)        
   }
 },
     computed:{
       notesToShow(){
-          if (!this.filterBy) return this.notesList;
-          var regex = new RegExp(`${this.filterBy}`, 'i');
-          return this.notesList.filter(note => regex.test(note.content))
-      },
+        return this.notesList
+        // if(!this.filterBy) return this.notesList;
+        // console.log(this.filterBy);
+        // return this.notesList.filter(note => {
+        //   note.content.includes(this.filterBy.content)
+
+        //   console.log('filter:', this.filterBy.content);
+          
+        // })
+        // console.log('type:',this.filterType,',txt:', this.filterByTxt);
+        //   if (!this.filterByTxt && this.filterType==='all') {
+        //     return this.notesList;
+          // } else if(!this.filterByTxt){
+          //     return this.notesList.filter(note => note.type.includes(this.filterType))
+          // } 
+        // }
+        //   else{
+        //     console.log('filterByWord:',this.filterByTxt);
+        //     return this.notesList.filter(note => {
+        //       // note.type.includes(this.filterType) &&
+        //       console.log(note.content);
+              
+        //       note.content.includes(this.filterByTxt) });
+        //     }
+            },
       selectNote(){
           console.log('note selcted');
           
@@ -58,7 +92,6 @@ export default {
       keepService.getNotes()
         .then(notes => {
             this.notesList = notes
-            console.log(this.notesList);
         })
         
         
