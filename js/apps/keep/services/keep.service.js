@@ -25,18 +25,24 @@ function createNotes() {
     gNotes = utilService.loadFromStorage(STORAGE_KEY);
     if (!gNotes) {
         gNotes = [
+            createNote('imgNote', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png', 'yellow'),
             createNote('todo', [{ line: 'Learn Promises', underLine: true },
             { line: 'Learn VueJS', underLine: false },
             { line: 'Learn NodeJS', underLine: false }], 'green'),
-            createNote('text-box', 'Im a txt box!', 'red'),
-            createNote('text-box', 'Have a GREAT MORNING!!', 'red'),
-            createNote('todo', [{ line: 'run', underLine: false },
-            { line: 'Pay The Bills!', underLine: false },
-            { line: 'Smile Today :)', underLine: true }]),
+            createNote('text-box', 'Im a text box!', 'red'),
+            createNote('imgNote', 'https://robbreportedit.files.wordpress.com/2019/09/intercontinental-maldives-full-aerial-view-3-bedroom-overwater-residence.jpg?w=1000', 'red'),
             createNote('youtube', 'https://www.youtube.com/watch?v=U3_uxUSeZV4', 'yellow'),
             createNote('url', 'http://stackoverflow.com/', 'blue'),
             createNote('imgNote', 'https://www.airc.ie/wp-content/uploads/horse-web.jpg', 'blue'),
-            createNote('imgNote', 'https://carpeoplemarketing.com/wp-content/uploads/2018/09/WOW-Customer-1080x675.png', 'blue'),
+            createNote('todo', [{ line: 'Finish Sprint 3', underLine: false },
+            { line: 'Drink A Beer With Ofer', underLine: false },
+            { line: 'Presentation Flow', underLine: true }]),
+            createNote('imgNote', 'https://imagevars.gulfnews.com/2019/08/29/Vacation_16cdd5ead2a_large.jpg', 'yellow'),
+            createNote('youtube', 'https://www.youtube.com/watch?v=nOFFfiOK1JA', 'blue'),
+            createNote('text-box', 'Have a GREAT MORNING!!', 'red'),
+            createNote('todo', [{ line: 'Workout', underLine: false },
+            { line: 'Pay The Bills!', underLine: false },
+            { line: 'Smile Today :)', underLine: true }], 'green'),
         ]
         utilService.saveToStorage(STORAGE_KEY, gNotes)
     }
