@@ -14,9 +14,9 @@
     src: url('../fonts/poppin/Poppins-Regular.ttf');
 }
 
-/* .home-page-img{
-    background-image: url("/img/bg-image.jpg");
-} */
+.home-page img{
+background-size: cover;
+}
 
 body{
     background-color: rgb(252, 252, 252);
