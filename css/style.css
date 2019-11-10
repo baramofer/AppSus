@@ -253,6 +253,7 @@ iframe{
 }
 .todo-container ul{
     padding: 0;
+    width: 50%;
 }
 .todo-container li{
     list-style: none;
@@ -266,6 +267,29 @@ iframe{
 }
 .todo-container .line-through{
     text-decoration: line-through;
+}
+/* .full-screen{
+    background-image: url('../img/bg.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+} */
+.user-msg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    padding: 25px;
+    width: 30%;
+    height: 30%;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.568);
+    z-index: 1
 }
 
 @media (max-width: 760px) {
@@ -324,7 +348,8 @@ iframe{
 }
 .note-preview-container{
     border-radius: 5px;
-    width: 95%;
+    width: 65%;
+    word-wrap: break-word;
     margin: 9px 4px;
     padding: 10px;
     font-size: 20px;
