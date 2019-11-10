@@ -1,10 +1,10 @@
-@import "/css/mail-details.css";
-@import "/css/helpers-css.css";
-@import "/css/mail-filter.css";
-@import "/css/mail-prev.css";
-@import "/css/mail-list.css";
-@import "/css/mail-side.css";
-@import "/css/mail-status.css";
+@import "mail-details.css";
+@import "css/helpers-css.css";
+@import "css/mail-filter.css";
+@import "css/mail-prev.css";
+@import "css/mail-list.css";
+@import "css/mail-side.css";
+@import "css/mail-status.css";
 
 *{
     box-sizing: border-box;
@@ -364,9 +364,4 @@ li {
     list-style: none;
 }
 
-.sort-btn {
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 10px;
-}
 }
