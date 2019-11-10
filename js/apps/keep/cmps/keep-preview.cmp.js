@@ -1,4 +1,4 @@
-'use strcit';
+'use strict';
 
 export default {
     props: ['note'],

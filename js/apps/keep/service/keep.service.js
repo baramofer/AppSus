@@ -14,6 +14,7 @@ export default {
     todoUnderLine,
     todoDelete,
     addTodo,
+    noteChange
 }
 
 const STORAGE_KEY = 'gNotes';
@@ -143,4 +144,35 @@ function addNote(type, value) {
     }
     gNotes.unshift(createNote(type, value))
     utilService.saveToStorage(STORAGE_KEY, gNotes)
+}
+
+function noteChange(noteId, type, action, value){
+    switch(action) {
+        case 'delete':
+            deleteNote(noteId)
+          break;
+        case 'underLine':
+            todoUnderLine(noteId, value)
+          break;
+        case 'todoDelete':
+            todoDelete(noteId, value)
+          break;
+        case 'addTodo':
+            addTodo(noteId, value)
+          break;
+        case 'editTodo':
+            editTodo(noteId, value)
+          break;
+        case 'clone':
+            cloneNote(noteId, type, value)
+          break;
+        case 'edit':
+            editNote(noteId, value)
+          break;
+        case 'tack':
+            tackNote(noteId)
+          break;
+        default:
+            changeColorNote(noteId, value)
+      }
 }

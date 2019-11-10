@@ -1,4 +1,4 @@
-'use strcit';
+'use strict';
 import { eventBus } from '../service/event-bus.service.js'
 
 export default {
