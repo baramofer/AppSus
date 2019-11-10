@@ -87,10 +87,36 @@ width: 30%;
 }
 
 .mail-list li.mail-prev.read {
-    background: white;
+    /* background: rgb(102, 95, 95); */
     font-weight: bold;
 }
+.mail-list li.mail-prev {
+    position: relative;
+}
+
 
 .main-email-container {
     height: 84vh;
+}
+
+@media (max-width: 760px) {
+    .main-mail-spec {
+        width: 27%;
+    }
+    .title-subject{
+        width: 46%;
+        padding-left: 5px;
+    }
+    .sort-buttons{
+        margin: 0 auto;
+    }
+    .email-list-container span{
+        text-align: left;
+    }
+    .send-time{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        margin-bottom: 1px;
+    }
 }
