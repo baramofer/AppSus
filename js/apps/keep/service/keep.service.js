@@ -89,6 +89,10 @@ function deleteNote(noteId){
     utilService.saveToStorage(STORAGE_KEY, gNotes)
 }
 
+function getNoteIdxBy(id){
+    return gNotes.findIndex(noteIdx => id===noteIdx.id)
+}
+
 function cloneNote(noteId, type){
     _findNote(noteId, type)
         .then(note => {

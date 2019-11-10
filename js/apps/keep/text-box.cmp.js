@@ -34,7 +34,7 @@ export default {
     },
     methods:{
         textToogleOpen(){
-            setTimeout(()=>{this.$refs.inputEdit.focus();},0) 
+            setTimeout(()=>{this.$refs.inputEdit.focus();},0)
             this.textToggle = !this.textToggle
         },
         editText(){

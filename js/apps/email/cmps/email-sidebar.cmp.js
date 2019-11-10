@@ -86,12 +86,12 @@ export default {
     sendPickedEmails(emailsType) {
       this.pickedEmails = emailsType;
       eventBus.$emit(PICKED_EMAIL_STATE, this.pickedEmails);
-      this.state = { mails: false, sent: false, deleted: false, starred: false};
-      if (emailsType === 1) this.state.mails = true;
-      if (emailsType === 2) this.state.sent = true;
-      if (emailsType === 3) this.state.deleted = true;
-      if (emailsType === 4) this.state.starred = true;
-      this.$router.push('/mail');
+      // this.state = { mails: false, sent: false, deleted: false, starred: false};
+      // if (emailsType === 1) this.state.mails = true;
+      // if (emailsType === 2) this.state.sent = true;
+      // if (emailsType === 3) this.state.deleted = true;
+      // if (emailsType === 4) this.state.starred = true;
+      // this.$router.push('/mail');
     }
   },
   mounted() {},

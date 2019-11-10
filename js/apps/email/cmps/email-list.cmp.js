@@ -16,13 +16,13 @@ template: `
         <span :class="{picked:sort.subject }" class="sort-btn" @click="sortSubject">Sort By Subject </span> 
         <span :class="{picked:sort.date }" class="sort-btn" @click="sortDate">Sort By Date</span>
       </li>
-  <email-preview 
-  :idx="idx" 
-  :emails="filterdEmails"
-  v-for= "(email,idx) in filterdEmails" 
-  :email="email" 
-    :key="idx" class="flex space-between">
-  </email-preview>
+      <email-preview 
+      :idx="idx" 
+      :emails="filterdEmails"
+      v-for= "(email,idx) in filterdEmails" 
+      :email="email" 
+        :key="idx" class="flex space-between">
+      </email-preview>
 
 </div>
 
@@ -47,7 +47,7 @@ data() {
     })
   },
   computed: {
-    filterdEmails: function() {
+    filterdEmails() {
       this.temp = this.emails;
       if (!this.filter || this.filter.isRead === 'All') {
         if (!this.filter) {

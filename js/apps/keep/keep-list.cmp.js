@@ -8,29 +8,29 @@ import imgNote from './img-note.cmp.js'
 import todo from './todo.cmp.js'
 
 export default {
-props: ['notes'],
-template: `
+    props: ['notes'],
+    template: `
 <section class="notes-list-container">
         <component :is="note.type" @noteChange="noteChange" :note="note" :key="note.id" v-for="note in notes" ></component>
 </section>
 `,
-methods:{
-    noteChange(noteId, type, action, color){
-        console.log('list:', noteId, type, action, color);
-        
-        this.$emit('noteChange', noteId, type, action, color)           
-    }
-},
+    methods: {
+        noteChange(noteId, type, action, color) {
+            console.log('list:', noteId, type, action, color);
 
-created(){
-},
-components:{
-    keepPreview,
-    keepService,
-    textBox,
-    youtube,
-    url,
-    imgNote,
-    todo
+            this.$emit('noteChange', noteId, type, action, color)
+        }
+    },
+
+    created() {
+    },
+    components: {
+        keepPreview,
+        keepService,
+        textBox,
+        youtube,
+        url,
+        imgNote,
+        todo
     }
 }
