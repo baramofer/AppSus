@@ -20,7 +20,6 @@ body{
     margin: 0;
     font-family: Poppins;
     height: 100vh;
-    /* width: 100vw; */
 }
 nav{
     font-size: 20px;
@@ -77,10 +76,17 @@ nav{
 }
 
 .notes-list-container{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    padding: 0 45px;
+    column-count: 3;
     justify-content: center;
     position: relative;
+}
+.notes-list-container > *{
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 .note-preview-container .toolBar{
     display: flex;
@@ -101,10 +107,9 @@ nav{
     align-items: center;
     justify-content: space-between;
     border-radius: 3px;
-    width: 28%;
-    margin: 8px;
+    /* width: 28%; */
+    margin-bottom: 8px;
     border: rgba(0, 0, 0, 0.041) 1px solid;
-    padding: 10px;
     font-size: 16px;
     color: rgb(43, 43, 43);
     position: relative;
@@ -260,6 +265,7 @@ iframe{
 }
 .todo-container{
     margin: 10px;
+    padding: 0;
     text-align: left;
 }
 .todo-container i{
@@ -291,8 +297,24 @@ iframe{
     background-color: rgba(255, 255, 255, 0.568);
     z-index: 1
 }
+.text-container{
+    padding: 15px;
+}
 
-@media (max-width: 760px) {    
+@media (max-width: 760px) {   
+.li-todo-internal-container{
+    word-wrap: break-word;
+    width: 100%;
+    margin:0;
+    padding:0
+} 
+.text-container{
+    padding: 3px;
+}
+.todo-container{
+    padding: 3px;
+    width: 80%;
+}
 .nav-container{
     display: none;        
 }
@@ -322,7 +344,14 @@ iframe{
     width: 30px;
 }
 .notes-list-container{
+    margin: 5px;
     justify-content: space-evenly;
+    /* display: flex;
+    flex-wrap: wrap; */
+    padding: 5px;
+    column-count: 2;
+    justify-content: center;
+    position: relative;
 }
 .keep-search-container{
     padding: 5px;
@@ -348,9 +377,9 @@ iframe{
 }
 .note-preview-container{
     border-radius: 5px;
-    width: 65%;
+    /* width: 90%; */
     word-wrap: break-word;
-    margin: 9px 4px;
+    /* margin: 9px 4px; */
     padding: 10px;
     font-size: 20px;
     color: rgb(43, 43, 43);

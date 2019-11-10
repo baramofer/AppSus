@@ -14,10 +14,10 @@ export default {
         </span>
         <span 
             @click="toggleIsRead('noToggle')" 
-            class="left subject"> 
+            class="left subject title-subject"> 
               <router-link :to="emailUrl">{{email.subject | snippet}}</router-link>  
         </span> 
-        <span>{{email.sentAt}}</span>
+        <span class="send-time">{{email.sentAt}}</span>
         <i  @click.stop="deleteEmail(idx)" class="fas fa-trash-alt cursor-pointer" ></i>
      <span @click="toggleIsRead">
                       <i class="far fa-envelope-open cursor-pointer" v-if="email.isRead"></i>

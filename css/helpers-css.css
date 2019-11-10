@@ -109,3 +109,6 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+.space-around{
+    justify-content: space-around;
+}
