@@ -3,8 +3,7 @@
 export default {
     template: `
         <section class="home-page">
-            <h2>Home Page-Big logo here</h2>
-            <div class="home-page-img"></div>
-        </section>
+            <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=439&q=80"/>
+            </section>
     `,
 }

@@ -136,5 +136,14 @@ cursor: pointer;
 @media (max-width: 760px) {
 .email-det-container {
     flex-direction: column;
-    }   
+    }
+.send-modal {
+    width: 70% !important;
+    height: 45% !important;
+    margin-bottom: 30%;
+}
+.send-modal textarea {
+    width: 80% !important;
+    height: 50% !important;
+}
 }

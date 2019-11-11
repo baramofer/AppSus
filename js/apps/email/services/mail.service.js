@@ -123,7 +123,7 @@ var emailsDB = [
     body:
       'Is amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Nested Routes is SATAN!',
-    name: 'Jeff Bezos',
+    name: 'Jhonnie Walker',
     isRead: false,
     sentAt: '04:20',
     isDeleted: false,
@@ -137,7 +137,7 @@ var emailsDB = [
     body:
       'Very amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue, how are you buddy?',
-    name: 'Bill Gates',
+    name: 'Assi Azzar',
     isRead: false,
     sentAt: '01:23',
     isDeleted: false,
@@ -151,7 +151,7 @@ var emailsDB = [
     body:
       'Fun amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Damn this framework is a badass!',
-    name: 'Warren Buffett',
+    name: 'Rotem Sela',
     isRead: false,
     sentAt: '04:20',
     isDeleted: false,
@@ -165,7 +165,7 @@ var emailsDB = [
     body:
       'Guys amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'How Vue changed my life',
-    name: 'Lionel Messi',
+    name: 'Danny Welbeck',
     isRead: false,
     sentAt: '01:22',
     isDeleted: false,
@@ -179,7 +179,7 @@ var emailsDB = [
     body:
       'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Do you know when will Sprint 4 start?',
-    name: 'Cristiano Ronaldo',
+    name: 'Bruce Wayne',
     isRead: false,
     sentAt: '04:20',
     isDeleted: false,
@@ -193,7 +193,7 @@ var emailsDB = [
     body:
       'Vue amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Hello Vue! how are you?',
-    name: 'Jhon Doe',
+    name: 'Peter Parker',
     isRead: false,
     sentAt: '04:23',
     isDeleted: false,
@@ -263,7 +263,147 @@ var emailsDB = [
     body:
       'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
     subject: 'Do you know when will Sprint 4 start?',
-    name: 'Cristiano Ronaldo',
+    name: 'Dan Bilzerian',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '19',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Anne Keith',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '20',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Donald Triger',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '21',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Harry Maguire',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '22',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Bryan Adams',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '23',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'James Spader',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '24',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Dean Tan',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '25',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Joe Ma',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '26',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Garry Blind',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '27',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Hector Bill',
+    isRead: false,
+    sentAt: '04:20',
+    isDeleted: false,
+    sendto: '',
+    isSent: false,
+    isDone: false,
+    isStarred: false
+  },
+  {
+    _id: '28',
+    body:
+      'Incididunt amet magna ullamco ad voluptate veniam amet deserunt elit elit nostrud. Fugiat sit adipisicing amet quis eu minim non id laborum. Voluptate amet deserunt ea consequat dolore pariatur. Veniam duis veniam duis commodo incididunt consequat tempor. Officia proident et pariatur non ipsum aute mollit fugiat fugiat nisi nulla ullamco adipisicing. Eu est laboris in amet et est quis occaecat.\r\n',
+    subject: 'Do you know when will Sprint 4 start?',
+    name: 'Jordi Alba',
     isRead: false,
     sentAt: '04:20',
     isDeleted: false,
