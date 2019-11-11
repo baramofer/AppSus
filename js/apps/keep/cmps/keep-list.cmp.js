@@ -1,6 +1,4 @@
 'use strict';
-import keepPreview from './keep-preview.cmp.js';
-import keepService from '../services/keep.service.js'
 import textBox from './text-box.cmp.js'
 import youtube from './youtube.cmp.js'
 import url from './url.cmp.js'
@@ -21,8 +19,6 @@ export default {
         }
     },
     components: {
-        keepPreview,
-        keepService,
         textBox,
         youtube,
         url,

@@ -109,6 +109,7 @@ text-decoration: underline;
     .title-subject{
         width: 46%;
         padding-left: 5px;
+        text-decoration: none;
     }
     .sort-buttons{
         margin: 0 auto;

@@ -14,7 +14,6 @@ export default {
                     <div class="menu-link" @click="burgerToggle"><router-link  to="/keep">Keep</router-link></div>
         </div>
         <nav class="nav-container">
-                    <div class="search"><i class="fas fa-search"></i></div>
                     <router-link to="/">Home</router-link>|
                     <router-link to="/mail">Mail</router-link>|
                     <router-link to="/keep">Keep</router-link>
